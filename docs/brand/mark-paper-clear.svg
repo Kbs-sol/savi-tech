@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="SaVi SV mark">
+  
+  <g fill="#1A1612">
+    <rect x="38" y="46" width="82" height="24" rx="3"/>
+    <rect x="38" y="46" width="24" height="82" rx="3"/>
+    <rect x="38" y="104" width="82" height="24" rx="3"/>
+    <rect x="96" y="104" width="24" height="90" rx="3"/>
+    <rect x="38" y="170" width="82" height="24" rx="3"/>
+  </g>
+  <polygon fill="#D4481A" points="132,46 156,46 186,194 162,194"/>
+  <polygon fill="#D4481A" points="176,46 200,46 176,194 152,194"/>
+</svg>
