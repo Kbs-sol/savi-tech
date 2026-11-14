@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — SaVi Tech</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+  <header class="admin-top">
+    <strong>SaVi Tech · Admin</strong>
+    <span>
+      <a href="index.html">View site</a>
+      <a href="index.html?draft=1" id="draft-link" style="margin-left:14px">Preview draft</a>
+      <button class="mini" id="logout" type="button" style="margin-left:14px">Sign out</button>
+    </span>
+  </header>
+  <div class="admin-shell">
+    <section class="login-card" id="login-card">
+      <p class="eyebrow" style="color:#0b7a9a">Studio only</p>
+      <h1 style="font-size:1.7rem;margin:0 0 8px">Sign in</h1>
+      <p class="help">Edit the live site copy, services, and team. Publishing writes <code>content.json</code> back to the GitHub repository. The password only unlocks this screen on this browser.</p>
+      <form id="login-form">
+        <label class="field">Password
+          <input type="password" id="password" autocomplete="current-password" required>
+        </label>
+        <button class="btn btn-cyan" type="submit">Enter dashboard</button>
+        <p class="form-note error" id="login-note"></p>
+      </form>
+    </section>
+
+    <section id="dash" class="hidden">
+      <div class="admin-grid">
+        <nav class="side-nav" aria-label="Admin sections">
+          <button type="button" data-panel="copy" class="active">Site copy</button>
+          <button type="button" data-panel="services">Services</button>
+          <button type="button" data-panel="steps">Process</button>
+          <button type="button" data-panel="team">Team</button>
+          <button type="button" data-panel="inbox">Messages</button>
+          <button type="button" data-panel="publish">Publish</button>
+        </nav>
+        <div>
+          <div class="panel-card" id="panel-copy"></div>
+          <div class="panel-card hidden" id="panel-services"></div>
+          <div class="panel-card hidden" id="panel-steps"></div>
+          <div class="panel-card hidden" id="panel-team"></div>
+          <div class="panel-card hidden" id="panel-inbox"></div>
+          <div class="panel-card hidden" id="panel-publish"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="admin.js"></script>
+</body>
+</html>

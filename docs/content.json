@@ -1,0 +1,100 @@
+{
+  "brand": {
+    "name": "SaVi Tech",
+    "legal": "SaVi Technologies",
+    "tagline": "Design. Develop. Deliver.",
+    "heroTitle": "Building digital futures.",
+    "heroLede": "Website design, development, landing pages, and digital products. Done carefully, and handed over clean.",
+    "cardLine": "Building digital futures",
+    "cardServices": "Web Design  |  Development  |  Digital Solutions",
+    "bandText": "A small creative technology studio. Sahara Banu, founder. Vijay Prasad, co-founder. The work is websites, interfaces, and the digital products around them.",
+    "aboutTitle": "Two people. One studio.",
+    "aboutParagraphs": [
+      "SaVi Technologies is a creative technology company. The work covers website design, web development, landing pages, UI and UX, app development, and related digital solutions.",
+      "The name is the two people and the work. Sa is Sahara. Vi is Vijay. Tech is technology. Sahara Banu is the founder. Vijay Prasad is the co-founder.",
+      "SaVi Tech is the brand name. SaVi Technologies is the business name."
+    ],
+    "aboutNote": "SaVi Tech is Sahara and Vijay, working together in technology.",
+    "servicesTitle": "Work we take on.",
+    "servicesIntro": "Clear scopes. Practical builds. If something sits outside the work, we say so.",
+    "approachTitle": "Design. Develop. Deliver.",
+    "teamTitle": "Founder and co-founder.",
+    "teamIntro": "SaVi is a small studio. These are the two people behind it.",
+    "contactTitle": "Tell us what you need.",
+    "contactIntro": "A short note is enough. We reply with a straight answer about fit, timing, and next steps.",
+    "email": "",
+    "phone": "",
+    "location": "Remote"
+  },
+  "services": [
+    {
+      "id": "website-design",
+      "title": "Website design",
+      "summary": "Page structure, type, and a visual system that stays quiet and readable.",
+      "detail": "Company sites and marketing sites, from the first layout through to a design that can be built as drawn."
+    },
+    {
+      "id": "web-development",
+      "title": "Web development",
+      "summary": "Front-end builds that match the design and stay easy to change later.",
+      "detail": "HTML, CSS, and JavaScript. Clean structure. No stack you do not need."
+    },
+    {
+      "id": "landing-pages",
+      "title": "Landing pages",
+      "summary": "One page with one job: explain the offer and make the next step obvious.",
+      "detail": "Campaign pages, launches, and straightforward pages for a single product or service."
+    },
+    {
+      "id": "ui-ux",
+      "title": "UI / UX",
+      "summary": "Interfaces people can move through without a tour.",
+      "detail": "Flows, screens, and the small decisions that make a product feel finished."
+    },
+    {
+      "id": "app-development",
+      "title": "App development",
+      "summary": "Screens and front-ends for products that need more than a brochure site.",
+      "detail": "We design the interface and, where it fits the scope, build the front end."
+    },
+    {
+      "id": "digital-solutions",
+      "title": "Digital solutions",
+      "summary": "Smaller technical work that sits beside a site: forms, content, simple tools.",
+      "detail": "Scoped before it starts. If it is not a fit, we will tell you."
+    }
+  ],
+  "steps": [
+    {
+      "id": "design",
+      "title": "Design",
+      "text": "We agree what the page has to do, then shape the layout and the words around that."
+    },
+    {
+      "id": "develop",
+      "title": "Develop",
+      "text": "We build it in the open: readable code, real content, and room to edit later."
+    },
+    {
+      "id": "deliver",
+      "title": "Deliver",
+      "text": "You get the finished site, the files, and a short handover."
+    }
+  ],
+  "team": [
+    {
+      "id": "sahara-banu",
+      "name": "Sahara Banu",
+      "role": "Founder",
+      "bio": "Founder of SaVi Technologies.",
+      "initials": "SB"
+    },
+    {
+      "id": "vijay-prasad",
+      "name": "Vijay Prasad",
+      "role": "Co-founder",
+      "bio": "Co-founder of SaVi Technologies.",
+      "initials": "VP"
+    }
+  ]
+}
