@@ -1,21 +1,17 @@
 (function () {
   "use strict";
 
-  // Safeguarded element text updater
+  // ── Helpers ──
   function text(id, value) {
     const el = document.getElementById(id);
     if (el && value != null && value !== "") el.textContent = value;
   }
 
-  // Populate brand copy
+  // ── Apply brand copy from content.json ──
   function applyBrand(brand) {
     if (!brand) return;
-    text("hero-title", brand.heroTitle);
     text("hero-lede", brand.heroLede);
     text("hero-tagline", brand.tagline);
-    text("card-line", brand.cardLine);
-    text("card-services", brand.cardServices);
-    text("band-text", brand.bandText);
     text("services-title", brand.servicesTitle);
     text("services-intro", brand.servicesIntro);
     text("about-title", brand.aboutTitle);
@@ -38,21 +34,22 @@
       brand.aboutParagraphs.forEach(pText => {
         const p = document.createElement("p");
         p.textContent = pText;
-        p.style.marginBottom = "20px";
+        p.style.marginBottom = "22px";
         aboutContainer.appendChild(p);
       });
     }
 
-    // Contact metadata
+    // Contact meta — build from brand data
     const contactMeta = document.getElementById("contact-meta");
     if (contactMeta) {
-      contactMeta.replaceChildren();
+      const wa = (brand.phone || "+91 83330 66370").replace(/[\s+]/g, '');
       const items = [
-        { label: "Direct Inquiries", value: brand.email || "contact@savitech.studio", href: "mailto:" + (brand.email || "contact@savitech.studio") },
-        { label: "Phone / WhatsApp", value: brand.phone || "+91 91219 93498", href: "tel:" + (brand.phone ? brand.phone.replace(/\s+/g, '') : "+919121993498") },
-        { label: "Studio Location", value: brand.location || "Hyderabad · Worldwide Remote", href: null }
+        { label: "Email", value: brand.email || "contact@savitech.studio", href: "mailto:" + (brand.email || "contact@savitech.studio") },
+        { label: "WhatsApp & Phone", value: brand.phone || "+91 83330 66370", href: "tel:+" + wa },
+        { label: "Location", value: brand.location || "Hyderabad · Worldwide Remote", href: null }
       ];
 
+      contactMeta.replaceChildren();
       items.forEach(item => {
         const wrap = document.createElement("div");
         wrap.className = "meta-item";
@@ -73,17 +70,43 @@
     }
   }
 
-  // Render Projects Grid (NO GITHUB LINKS - PRIVACY FIRST, ONLY LIVE AND PREVIEW URLS)
+  // ── Render Projects (privacy-first: NO github links ever) ──
   function renderProjects(projects, targetId) {
     const container = document.getElementById(targetId || "projects-grid");
     if (!container || !Array.isArray(projects)) return;
+
+    // Only replace if the container is empty (let static HTML take priority)
+    if (container.children.length > 0) return;
 
     container.replaceChildren();
     projects.forEach(proj => {
       const card = document.createElement("article");
       card.className = "project-card reveal";
 
-      // Top logo / category
+      // Visual header
+      const visual = document.createElement("div");
+      visual.className = "project-visual";
+      const accent = proj.accent || "#102444";
+      visual.style.background = `linear-gradient(135deg, ${accent} 0%, #07111F 100%)`;
+
+      const inner = document.createElement("div");
+      inner.className = "project-visual-inner";
+
+      const name = document.createElement("div");
+      name.textContent = proj.title;
+      name.style.cssText = "font-size:1.3rem;font-weight:700;color:#fff;font-family:var(--font);";
+
+      const cat = document.createElement("div");
+      cat.className = "project-visual-name";
+      cat.textContent = proj.category.toLowerCase();
+
+      inner.append(name, cat);
+      visual.appendChild(inner);
+
+      // Body
+      const body = document.createElement("div");
+      body.className = "project-body";
+
       const top = document.createElement("div");
       top.className = "project-card-top";
 
@@ -96,13 +119,10 @@
         img.className = "project-logo-img";
         logoWrap.appendChild(img);
       } else {
-        const span = document.createElement("span");
-        span.style.fontFamily = "var(--font-mono)";
-        span.style.fontWeight = "700";
-        span.style.fontSize = "1.2rem";
-        span.style.color = "#FFFFFF";
-        span.textContent = proj.title;
-        logoWrap.appendChild(span);
+        const sp = document.createElement("span");
+        sp.style.cssText = "font-size:0.95rem;font-weight:600;color:var(--paper);font-family:var(--font);";
+        sp.textContent = proj.client;
+        logoWrap.appendChild(sp);
       }
 
       const tag = document.createElement("span");
@@ -110,43 +130,35 @@
       tag.textContent = proj.category;
       top.append(logoWrap, tag);
 
-      // Body info
-      const body = document.createElement("div");
       const title = document.createElement("h3");
       title.className = "project-title";
       title.textContent = proj.title;
 
       const summary = document.createElement("p");
       summary.className = "project-summary";
-      summary.textContent = proj.description || proj.summary;
+      summary.textContent = proj.summary;
 
-      // Metrics
       const metricsWrap = document.createElement("div");
       metricsWrap.className = "project-metrics";
-      if (Array.isArray(proj.metrics)) {
-        proj.metrics.forEach(m => {
-          const pill = document.createElement("span");
-          pill.className = "metric-pill";
-          pill.textContent = "✦ " + m;
-          metricsWrap.appendChild(pill);
-        });
-      }
+      (proj.metrics || []).forEach(m => {
+        const pill = document.createElement("span");
+        pill.className = "metric-pill";
+        pill.textContent = "✦ " + m;
+        metricsWrap.appendChild(pill);
+      });
 
-      // Tech tags
       const techWrap = document.createElement("div");
       techWrap.className = "project-tech";
-      if (Array.isArray(proj.tech)) {
-        proj.tech.forEach(t => {
-          const tSpan = document.createElement("span");
-          tSpan.className = "tech-tag";
-          tSpan.textContent = t;
-          techWrap.appendChild(tSpan);
-        });
-      }
+      (proj.tech || []).forEach(t => {
+        const tSpan = document.createElement("span");
+        tSpan.className = "tech-tag";
+        tSpan.textContent = t;
+        techWrap.appendChild(tSpan);
+      });
 
-      body.append(title, summary, metricsWrap, techWrap);
+      body.append(top, title, summary, metricsWrap, techWrap);
 
-      // Footer links: only live production or sandbox preview, NEVER github
+      // Footer links — NEVER show github links
       const foot = document.createElement("div");
       foot.className = "project-footer";
 
@@ -159,7 +171,7 @@
         live.target = "_blank";
         live.rel = "noopener noreferrer";
         live.className = "link-out";
-        live.innerHTML = "Visit Flagship ↗";
+        live.textContent = "Visit Live ↗";
         links.appendChild(live);
       }
 
@@ -169,56 +181,85 @@
         prev.target = "_blank";
         prev.rel = "noopener noreferrer";
         prev.className = "link-preview";
-        prev.innerHTML = "Interactive Web Preview ↗";
+        prev.textContent = "Interactive Preview ↗";
         links.appendChild(prev);
       }
 
       const clientLabel = document.createElement("span");
-      clientLabel.style.fontSize = "0.75rem";
-      clientLabel.style.color = "var(--text-dim)";
-      clientLabel.style.fontFamily = "var(--font-mono)";
+      clientLabel.style.cssText = "font-size:0.72rem;color:var(--muted);font-family:var(--mono);";
       clientLabel.textContent = proj.client;
 
       foot.append(links, clientLabel);
+      body.appendChild(foot);
 
-      card.append(top, body, foot);
+      card.append(visual, body);
       container.appendChild(card);
     });
 
     observeReveals();
   }
 
-  // Render Services
-  function renderServices(services) {
+  // ── Render Services as numbered editorial list ──
+  function renderServiceList(services) {
+    // Try the new service-list container first
+    const list = document.getElementById("service-list");
     const grid = document.getElementById("service-grid");
-    if (!grid || !Array.isArray(services)) return;
+    const target = list || grid;
+    if (!target || !Array.isArray(services)) return;
+    if (target.children.length > 0) return; // static HTML takes priority
 
-    grid.replaceChildren();
+    target.replaceChildren();
     services.forEach((s, idx) => {
-      const card = document.createElement("article");
-      card.className = "service-card reveal";
+      const row = document.createElement("div");
+      row.className = "service-row" + (s.highlight ? " highlight-row" : "");
 
-      const idxSpan = document.createElement("span");
-      idxSpan.className = "index";
-      idxSpan.textContent = "0" + (idx + 1) + " · ATELIER CAPABILITY";
+      const num = document.createElement("span");
+      num.className = "service-num";
+      num.textContent = String(idx + 1).padStart(2, "0");
+
+      const icon = document.createElement("span");
+      icon.className = "service-icon";
+      icon.textContent = s.icon || "✦";
+
+      const info = document.createElement("div");
+      info.className = "service-info";
 
       const title = document.createElement("h3");
       title.textContent = s.title;
+      if (s.highlight) {
+        const badge = document.createElement("span");
+        badge.className = "service-whatsapp-badge";
+        badge.textContent = "Popular";
+        title.appendChild(badge);
+      }
 
-      const p = document.createElement("p");
-      p.textContent = s.detail || s.summary;
+      const summary = document.createElement("p");
+      summary.className = "summary";
+      summary.textContent = s.summary;
 
-      card.append(idxSpan, title, p);
-      grid.appendChild(card);
+      const detail = document.createElement("p");
+      detail.className = "detail";
+      detail.textContent = s.detail || "";
+
+      const toggle = document.createElement("button");
+      toggle.className = "service-toggle";
+      toggle.setAttribute("aria-label", "Learn more about " + s.title);
+      toggle.innerHTML = 'Learn more <span class="arrow">›</span>';
+      toggle.addEventListener("click", () => {
+        row.classList.toggle("open");
+      });
+
+      info.append(title, summary, detail, toggle);
+      row.append(num, icon, info);
+      target.appendChild(row);
     });
-
-    observeReveals();
   }
 
-  // Render Process Steps
+  // ── Render Process Steps ──
   function renderSteps(steps) {
     const grid = document.getElementById("steps-grid");
     if (!grid || !Array.isArray(steps)) return;
+    if (grid.children.length > 0) return;
 
     grid.replaceChildren();
     steps.forEach(step => {
@@ -234,25 +275,30 @@
       card.append(title, p);
       grid.appendChild(card);
     });
-
     observeReveals();
   }
 
-  // Render Team
+  // ── Render Team ──
   function renderTeam(team) {
     const grid = document.getElementById("team-grid");
     if (!grid || !Array.isArray(team)) return;
+    if (grid.children.length > 0) return;
 
     grid.replaceChildren();
     team.forEach(member => {
       const card = document.createElement("article");
       card.className = "team-card reveal";
 
-      const avatar = document.createElement("div");
-      avatar.className = "avatar-badge";
-      avatar.textContent = member.initials || "SV";
+      // Founder mark with initial
+      const mark = document.createElement("div");
+      mark.className = "founder-mark";
+      const initial = (member.initials || member.name || "?")[0];
+      mark.innerHTML = `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="4" y="24" font-family="'Outfit',system-ui,sans-serif" font-size="22" font-weight="800" fill="#3EE0FF">${initial}</text>
+      </svg>`;
 
       const info = document.createElement("div");
+
       const name = document.createElement("h3");
       name.textContent = member.name;
 
@@ -260,19 +306,22 @@
       role.className = "role";
       role.textContent = member.role;
 
+      const discipline = document.createElement("p");
+      discipline.className = "discipline";
+      discipline.textContent = member.discipline || "";
+
       const bio = document.createElement("p");
       bio.className = "bio";
       bio.textContent = member.bio;
 
-      info.append(name, role, bio);
-      card.append(avatar, info);
+      info.append(name, role, discipline, bio);
+      card.append(mark, info);
       grid.appendChild(card);
     });
-
     observeReveals();
   }
 
-  // Setup Mobile Nav Toggle with Lock
+  // ── Mobile Nav ──
   function setupNav() {
     const menuBtn = document.getElementById("menu-btn");
     const nav = document.getElementById("nav");
@@ -281,24 +330,48 @@
         const isOpen = nav.classList.toggle("open");
         menuBtn.setAttribute("aria-expanded", String(isOpen));
         document.body.style.overflow = isOpen ? "hidden" : "";
+        // Animate hamburger to X
+        const spans = menuBtn.querySelectorAll("span");
+        if (isOpen) {
+          spans[0].style.transform = "translateY(6.5px) rotate(45deg)";
+          spans[1].style.opacity = "0";
+          spans[2].style.transform = "translateY(-6.5px) rotate(-45deg)";
+        } else {
+          spans[0].style.transform = "";
+          spans[1].style.opacity = "";
+          spans[2].style.transform = "";
+        }
       });
 
-      // Close when clicking link on mobile
       nav.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
           nav.classList.remove("open");
           document.body.style.overflow = "";
+          const spans = menuBtn.querySelectorAll("span");
+          spans[0].style.transform = "";
+          spans[1].style.opacity = "";
+          spans[2].style.transform = "";
         });
       });
     }
 
-    // Set active link
+    // Active link highlight
     const page = document.body.dataset.page || "home";
     const activeLink = document.querySelector(`.nav a[data-nav="${page}"]`);
     if (activeLink) activeLink.classList.add("active");
   }
 
-  // Setup Contact Form
+  // ── Service Toggle (for static HTML rows) ──
+  function setupServiceToggles() {
+    document.querySelectorAll(".service-toggle").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const row = btn.closest(".service-row");
+        if (row) row.classList.toggle("open");
+      });
+    });
+  }
+
+  // ── Contact Form ──
   function setupContactForm() {
     const form = document.getElementById("contact-form");
     const statusBox = document.getElementById("form-status");
@@ -313,38 +386,38 @@
       const message = formData.get("message");
 
       if (!name || !email || !message) {
-        alert("Please complete all required fields.");
+        alert("Please fill in your name, email, and project description.");
         return;
       }
 
+      // Store locally
       try {
         const leads = JSON.parse(localStorage.getItem("savi_inquiries") || "[]");
         leads.push({ name, email, interest, message, date: new Date().toISOString() });
         localStorage.setItem("savi_inquiries", JSON.stringify(leads));
-      } catch (err) {
-        console.warn("Storage unavailable", err);
-      }
+      } catch (err) { /* silent */ }
 
-      // Direct founder mailto fallback
-      const subject = encodeURIComponent(`[SaVi Tech Project Inquiry] - ${interest} from ${name}`);
-      const body = encodeURIComponent(`Hi Sahera & Vijay,\n\nName: ${name}\nEmail: ${email}\nLooking for: ${interest}\n\nProject Scope & Goals:\n${message}\n\nSent via savitech.studio`);
-      window.location.href = `mailto:kbskumar331@gmail.com,contact@savitech.studio?subject=${subject}&body=${body}`;
+      // mailto fallback — direct to founders
+      const subject = encodeURIComponent(`[SaVi Tech] ${interest} Inquiry from ${name}`);
+      const body = encodeURIComponent(
+        `Hi Sahera & Vijay,\n\nName: ${name}\nEmail: ${email}\nLooking for: ${interest}\n\nProject Details:\n${message}\n\n— Sent via savitech.studio`
+      );
+      window.location.href = `mailto:contact@savitech.studio?subject=${subject}&body=${body}`;
 
       if (statusBox) {
-        statusBox.textContent = `Thank you, ${name}. Your project inquiry has been queued directly to Sahera & Vijay. We guarantee a reply within 24 hours.`;
+        statusBox.textContent = `Thank you, ${name}! Your message has been sent to Sahera & Vijay. We'll reply within 24 hours.`;
         statusBox.className = "form-status success";
         statusBox.style.display = "block";
       }
-
       form.reset();
     });
   }
 
-  // Viewport Reveal Observer
+  // ── Intersection Observer for reveals ──
   let observer;
   function observeReveals() {
     if (!("IntersectionObserver" in window)) {
-      document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-visible"));
+      document.querySelectorAll(".reveal, .reveal-stagger").forEach(el => el.classList.add("is-visible"));
       return;
     }
     if (!observer) {
@@ -355,67 +428,60 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+      }, { threshold: 0.1, rootMargin: "0px 0px -48px 0px" });
     }
-    document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => observer.observe(el));
+    document.querySelectorAll(".reveal:not(.is-visible), .reveal-stagger:not(.is-visible)").forEach(el => observer.observe(el));
   }
 
-  // Lightweight Inertial Smooth Scrolling (Lenis Integration with Native Mobile Bypass)
+  // ── Lenis smooth scroll (desktop only, touch bypass) ──
   function initSmoothScroll() {
-    // On touch devices or reduced motion, native hardware momentum is best for 60fps
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouch) return; // Keep mobile 100% native 60-120fps
+    if (isTouch) return;
 
-    // Dynamically load Lenis from unpkg for zero-bundle weight
     const script = document.createElement("script");
     script.src = "https://unpkg.com/lenis@1.1.18/dist/lenis.min.js";
     script.onload = () => {
       if (typeof window.Lenis === "function") {
         const lenis = new window.Lenis({
-          duration: 1.2,
+          duration: 1.15,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
           smoothWheel: true,
-          smoothTouch: false // Crucial for mobile performance
+          smoothTouch: false
         });
-
-        function raf(time) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
       }
     };
     document.head.appendChild(script);
   }
 
-  // Init
+  // ── Init ──
   async function init() {
-    setupNav();
-    setupContactForm();
-    initSmoothScroll();
-
+    // Year
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Mark existing static cards for reveal
-    document.querySelectorAll(".project-card, .service-card, .step-card, .team-card, .inbound-box, .studio-spec-box").forEach(el => {
-      el.classList.add("reveal");
-    });
+    setupNav();
+    setupServiceToggles();
+    setupContactForm();
+    initSmoothScroll();
     observeReveals();
 
+    // Load content.json
     try {
       const res = await fetch("content.json");
       if (res.ok) {
         const data = await res.json();
         applyBrand(data.brand);
         renderProjects(data.projects);
-        renderServices(data.services);
+        renderServiceList(data.services);
         renderSteps(data.steps);
         renderTeam(data.team);
+        observeReveals();
       }
     } catch (err) {
-      console.warn("Failed to load content.json, relying on static markup", err);
+      console.warn("content.json not loaded, static HTML is active.", err);
     }
   }
 

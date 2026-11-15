@@ -3,27 +3,27 @@
     "name": "SaVi Tech",
     "legal": "SaVi Technologies",
     "tagline": "DESIGN. DEVELOP. DELIVER.",
-    "heroTitle": "Architecting High-Impact Digital Experiences.",
-    "heroLede": "We partner with ambitious brands, modern e-commerce stores, and high-growth ventures to design and engineer bespoke web flagships, digital products, and high-conversion interfaces.",
-    "cardLine": "Digital Product & Engineering Studio",
-    "cardServices": "Bespoke Web Design  ·  Full-Stack Engineering  ·  E-Commerce Architecture",
-    "bandText": "A boutique digital product studio combining Scandinavian-level minimalist design with enterprise engineering precision. Direct founder collaboration. Zero agency overhead.",
-    "aboutTitle": "High-craft digital engineering. Direct founder collaboration.",
+    "heroTitle": "We design and build digital products that make your business look credible and work beautifully.",
+    "heroLede": "From brand launches to online stores to WhatsApp automations — SaVi Tech handles the digital side so you can focus on the business.",
+    "cardLine": "Boutique Digital Studio",
+    "cardServices": "Websites  ·  Online Stores  ·  Automations",
+    "bandText": "We work directly with founders and business owners. No account managers, no outsourced teams — just senior design and engineering focused entirely on your project.",
+    "aboutTitle": "Built by founders, for founders.",
     "aboutParagraphs": [
-      "SaVi Technologies (SaVi Tech) was founded on a straightforward principle: great digital products are built by close, agile teams with deep craft, not by layers of middle management.",
-      "The name reflects our foundational partnership: Sa (Design, Strategy & Creative Direction) and Vi (Product Engineering & Full-Stack Systems), united through technology (Tech). Sahera Banu is the founder. Vijay Prasad is the co-founder.",
-      "We design and engineer bespoke web platforms, modern e-commerce flagships, and web applications that combine high aesthetic rigor with lightning-fast performance, resilient architecture, and measurable business growth."
+      "SaVi Technologies was started on a simple idea: great digital products come from close, hands-on teams — not layers of agencies and middle managers.",
+      "The name says it all. Sa is Sahera Banu, who leads design, brand strategy, and creative direction. Vi is Vijay Prasad, who leads engineering, product systems, and technical delivery. Together, we are SaVi Tech.",
+      "We build bespoke websites, online stores, and business automations that look great, work reliably, and genuinely help you grow."
     ],
-    "aboutNote": "Direct collaboration with senior designers and engineers on every engagement.",
-    "servicesTitle": "Capabilities & Core Offerings",
-    "servicesIntro": "From brand-defining visual identities to complex full-stack web applications, our services are scoped for clarity, speed, and lasting longevity.",
+    "aboutNote": "Every project is handled directly by Sahera and Vijay — from first call to final launch.",
+    "servicesTitle": "What We Build",
+    "servicesIntro": "Clear services. No jargon. Real results for real businesses.",
     "approachTitle": "DESIGN. DEVELOP. DELIVER.",
-    "teamTitle": "Studio Leadership",
-    "teamIntro": "A specialized boutique studio led by focused multidisciplinary practitioners.",
-    "contactTitle": "Let's build something exceptional.",
-    "contactIntro": "Whether you are launching a new digital flagship, scaling an e-commerce brand, or need an engineering overhaul, tell us about your project.",
+    "teamTitle": "Who You Work With",
+    "teamIntro": "When you work with SaVi Tech, you talk directly to the people who design and build your product. Always.",
+    "contactTitle": "Let's build something real.",
+    "contactIntro": "Tell us what you're working on. Whether it's a new website, an online store, or automating your business — we'll reply with an honest plan within 24 hours.",
     "email": "contact@savitech.studio",
-    "phone": "+91 91219 93498",
+    "phone": "+91 83330 66370",
     "location": "Hyderabad · Remote Worldwide"
   },
   "projects": [
@@ -31,131 +31,176 @@
       "id": "intru-in",
       "title": "intru.in",
       "client": "INTRU Streetwear",
-      "category": "E-Commerce / Direct-To-Consumer",
-      "scope": "Brand Identity, Custom Storefront, Checkout Optimization, Ultra-Fast CDN",
-      "summary": "High-velocity minimalist streetwear e-commerce platform engineered for limited-edition drops and sub-second load times.",
-      "description": "Engineered a headless-feel e-commerce experience for an independent Indian streetwear label. Integrated custom product drop timers, real-time inventory synchronization, dynamic size selection, and frictionless Razorpay/Stripe checkout flows, resulting in a 42% lift in mobile conversion rates.",
-      "metrics": ["Sub-800ms Average Page Load", "42% Conversion Boost", "Zero-Latency Cart Actions"],
-      "tech": ["TypeScript", "Tailwind CSS", "Cloudflare Pages", "Razorpay / UPI Integration"],
+      "category": "Online Store / Fashion",
+      "scope": "Brand Identity, Custom Storefront, Checkout Optimization",
+      "summary": "A minimal, high-impact streetwear store built for fast drops and smooth mobile shopping.",
+      "description": "We built the full e-commerce experience for INTRU — an independent Indian streetwear label. Product drops, inventory sync, smooth UPI checkout, and a design that feels as sharp as the brand.",
+      "metrics": ["Sub-second page load", "42% more mobile sales", "Instant cart & checkout"],
+      "tech": ["Custom Storefront", "UPI / Razorpay", "Cloudflare CDN"],
       "liveUrl": "https://intru.in",
       "previewUrl": "https://intru.in",
       "featured": true,
+      "accent": "#1A1A1A",
       "logo": "assets/clients/intru-logo-white.png"
     },
     {
       "id": "vyra-herbals",
       "title": "Vyra Herbals",
       "client": "Vyra Herbals India",
-      "category": "Brand Flagship / Health & Wellness",
-      "scope": "UI/UX Redesign, E-Commerce Storefront, Shiprocket Logistics, Ingredient Trays",
-      "summary": "100% natural, chemical-free hair care flagship store featuring interactive scalp concern trays and automated fulfillment.",
-      "description": "Designed and deployed a modern e-commerce storefront for an ISO 9001:2015 & GMP-certified organic hair care brand. Built interactive product discovery tools, customer review aggregators, and automated Shiprocket courier sync to streamline delivery across Pan-India.",
-      "metrics": ["Pan-India Automated Logistics", "100% Natural Brand Storytelling", "ISO & GMP Trust Badges"],
-      "tech": ["HTML5 / Modern JS", "Tailwind CSS", "Shiprocket API", "Supabase Backend"],
+      "category": "Brand Flagship / Health & Beauty",
+      "scope": "UI/UX Redesign, E-Commerce, Shiprocket Logistics",
+      "summary": "A natural hair care brand store with automated Pan-India delivery built in.",
+      "description": "We designed and launched the flagship store for Vyra Herbals — a 100% natural, chemical-free hair care brand. The site features product discovery tools, real customer reviews, and automated Shiprocket shipping that syncs across India without any manual work.",
+      "metrics": ["Pan-India automated shipping", "Ingredient transparency pages", "ISO & GMP certified brand"],
+      "tech": ["Custom Storefront", "Shiprocket API", "Supabase"],
       "liveUrl": "https://vyraherbals.com",
       "previewUrl": "https://vyraherbals.com",
       "featured": true,
+      "accent": "#1B3A2D",
       "logo": "assets/clients/vyra-final-logo.png"
     },
     {
       "id": "vyra-hair-tracker",
       "title": "Vyra Hair Tracker",
       "client": "Vyra Ecosystem",
-      "category": "Mobile Application / Digital Health",
-      "scope": "Cross-Platform App Architecture, Supabase Database, Automated Reminders, Routine Scoring",
-      "summary": "Cross-platform hair health progression tracker with routine scoring, photo milestones, and push reminders.",
-      "description": "Developed a full-featured companion application enabling users to track hair recovery journeys over 12-week cycles. Built with secure Supabase authentication, photographic progress vaults, and intelligent streak-tracking algorithms. Interactive web sandbox preview available.",
-      "metrics": ["12-Week Progressive Regimen Tracker", "Encrypted Milestone Vault", "Automated Push Notifications"],
-      "tech": ["Cross-Platform Mobile", "Supabase", "Cloudinary", "Edge Functions"],
+      "category": "Mobile App / Health",
+      "scope": "Cross-Platform App, Routine Scoring, Photo Milestones",
+      "summary": "A companion app that lets customers track their hair health journey over 12 weeks.",
+      "description": "Built as a companion to Vyra Herbals, this app lets users log their hair care routine, track progress with weekly photos, and get automated reminders. Available on web — interactive sandbox preview is live.",
+      "metrics": ["12-week progress tracker", "Photo milestone vault", "Automated push reminders"],
+      "tech": ["Cross-Platform App", "Supabase", "Cloudinary"],
       "liveUrl": "",
       "previewUrl": "https://vyra-preview.surge.sh/",
       "featured": true,
+      "accent": "#1A2E1A",
       "logo": "assets/clients/vyra-logo.png"
     },
     {
       "id": "photoframe-pfs",
       "title": "PhotoFrame PFS",
       "client": "The Frame House",
-      "category": "Custom E-Commerce Tool / Web App",
-      "scope": "Interactive Frame Visualizer, Dynamic Pricing Algorithm, Custom Uploads",
-      "summary": "High-fidelity interactive custom photo framing previewer with live dimension scaling and material costing.",
-      "description": "Architected a custom photo frame builder allowing customers to upload personal photos, simulate museum-grade matting and glass finishes on live room wall renders, and order precision-cut frames online with immediate dynamic pricing calculations.",
-      "metrics": ["Interactive Live Wall Simulation", "Instant Dimension & Aspect Math", "Automated Print Preparation"],
-      "tech": ["React / Modern Stack", "TypeScript", "Canvas 2D API", "Cloudflare Workers"],
+      "category": "Custom Web Tool / E-Commerce",
+      "scope": "Live Frame Visualizer, Dynamic Pricing, Custom Uploads",
+      "summary": "An interactive tool where customers upload a photo and see it inside a custom frame before ordering.",
+      "description": "We built a custom photo frame configurator for The Frame House. Customers upload their image, choose frame style, size, and matting, and instantly see the result in a room simulation — with live pricing calculated as they go.",
+      "metrics": ["Live wall room simulation", "Real-time pricing", "Instant order-ready output"],
+      "tech": ["React", "Canvas 2D API", "Cloudflare Workers"],
       "liveUrl": "https://theframehouse.in",
       "previewUrl": "https://photoframepfs.pages.dev/",
       "featured": true,
+      "accent": "#2A1A0A",
+      "logo": ""
+    },
+    {
+      "id": "doraemon-media",
+      "title": "Doraemon Media",
+      "client": "Doraemon Media Platform",
+      "category": "Media Platform",
+      "scope": "Video Sharing, Content Discovery, Modern UI",
+      "summary": "A modern media sharing platform with a clean, immersive viewing experience.",
+      "description": "A video content platform built with a focus on clean UX, fast media delivery, and smooth navigation. Built for sharing trailers, short-form video, and curated content.",
+      "metrics": ["Fast media delivery", "Clean, modern UI", "Mobile-first design"],
+      "tech": ["Modern Web Stack", "Media Streaming", "CDN"],
+      "liveUrl": "https://doraemon-6lm.pages.dev/",
+      "previewUrl": "https://doraemon-6lm.pages.dev/",
+      "featured": false,
+      "accent": "#0A1A2E",
+      "logo": ""
+    },
+    {
+      "id": "campus-assist",
+      "title": "Campus Assist",
+      "client": "Campus Assist",
+      "category": "EdTech / Web App",
+      "scope": "Campus Utility Platform, Information Hub",
+      "summary": "A clean, easy-to-use digital platform for campus information and student assistance.",
+      "description": "Campus Assist is a digital utility platform designed to help students navigate campus resources, schedules, and information quickly. Clear layout, fast access, mobile-friendly.",
+      "metrics": ["Student-first UX", "Fast information access", "Mobile optimised"],
+      "tech": ["Modern Web Stack", "Responsive Design"],
+      "liveUrl": "https://campusassist.pages.dev/",
+      "previewUrl": "https://campusassist.pages.dev/",
+      "featured": false,
+      "accent": "#1A1030",
       "logo": ""
     }
   ],
   "services": [
     {
       "id": "website-design",
-      "title": "Bespoke Website Design",
-      "summary": "Editorial layout, typography systems, and brand-defining visual aesthetics that elevate market positioning.",
-      "detail": "We create bespoke digital brand flagships tailored to capture high-value clients and convey authority. Every layout is mathematically balanced, responsive across all form factors, and crafted with obsessively tuned micro-interactions."
+      "title": "Website Design & Brand Identity",
+      "icon": "✦",
+      "summary": "A website that makes your business look established and credible from the first second.",
+      "detail": "We design bespoke websites that reflect your brand — not a template. Every layout is clean, balanced, and built to build trust with your visitors on arrival. This includes typography, color, imagery direction, and full responsive design for mobile and desktop."
     },
     {
       "id": "web-development",
-      "title": "High-Performance Web Engineering",
-      "summary": "Modern front-end architecture, modular codebases, lightning-fast rendering, and future-proof foundations.",
-      "detail": "We write clean, semantic HTML5, modern CSS/Tailwind, and optimized TypeScript/JavaScript. No bloat, no unneeded dependencies — just ultra-clean architecture delivering 95+ Google Lighthouse scores."
+      "title": "Web Development & Engineering",
+      "icon": "◈",
+      "summary": "Fast, reliable, and smooth — built to load instantly and work on every phone.",
+      "detail": "We write clean modern code that keeps your site running fast and looking great across all devices. No bloated plugins, no slow loading — just a website that works exactly the way it should."
     },
     {
       "id": "ecommerce-architecture",
-      "title": "E-Commerce & D2C Flagships",
-      "summary": "Conversion-focused online storefronts with sub-second page transitions, dynamic carts, and custom checkout flows.",
-      "detail": "From indie DTC brand drops (like intru.in) to high-volume catalog architectures (like Vyra Herbals), we build customized shopping experiences with integrated logistics, analytics, and instant UPI/Card payment gateways."
-    },
-    {
-      "id": "ui-ux",
-      "title": "Product UI / UX & Prototyping",
-      "summary": "Intuitive product flows, design systems, and software interfaces built for effortless user adoption.",
-      "detail": "We transform complex user journeys into friction-free digital workflows. High-fidelity wireframing, clickable prototypes, and comprehensive design tokens ready for development."
+      "title": "Online Stores & E-Commerce",
+      "icon": "◉",
+      "summary": "Sell online confidently with a store designed to convert browsers into buyers.",
+      "detail": "We build custom online stores with smooth product browsing, quick checkout, UPI and card payments, and automated order management. See intru.in and Vyra Herbals for live examples of what we build."
     },
     {
       "id": "whatsapp-automation",
       "title": "WhatsApp Business Automation",
-      "summary": "Automated order updates, conversational chatbots, and instant lead capture directly on WhatsApp.",
-      "detail": "We turn WhatsApp into an automated sales and support engine: automated order confirmations, abandoned cart recovery, customer service AI routing, and instant CRM lead notifications."
+      "icon": "◎",
+      "summary": "Turn WhatsApp into an automatic sales and support tool — without any extra work from you.",
+      "detail": "We set up automated WhatsApp systems that send order confirmations, delivery updates, and follow-ups to your customers. We also build lead capture bots that collect inquiries and route them to you instantly — all running 24/7, automatically.",
+      "highlight": true
     },
     {
       "id": "business-automation",
-      "title": "Fulfillment & Workflow Automations",
-      "summary": "Automated logistics with Shiprocket, payment reconciliations, and custom operational tools.",
-      "detail": "Eliminate repetitive manual tasks. We integrate automated shipping label creation, payment gateway sync, inventory alerts, and bespoke internal workflow dashboards."
+      "title": "Fulfilment & Business Automations",
+      "icon": "⬡",
+      "summary": "Automate the repetitive work — shipping, payments, and operations — so you can focus on growth.",
+      "detail": "We connect your store with Shiprocket for automatic shipping label creation, track payment reconciliations, send inventory alerts, and build custom internal dashboards. The result: less manual work, fewer mistakes, and more time for you."
+    },
+    {
+      "id": "ui-ux",
+      "title": "Custom Web Tools & Interactive Platforms",
+      "icon": "◇",
+      "summary": "If your idea needs something that doesn't exist yet, we'll build it.",
+      "detail": "From live product configurators and pricing calculators to full web applications — we design and build custom tools that give your customers a unique experience. See PhotoFrame PFS for a live example."
     }
   ],
   "steps": [
     {
       "id": "discover-design",
-      "title": "01 · Architecture & Design",
-      "text": "We analyze your audience, clarify competitive advantages, and produce high-fidelity design prototypes that reflect your brand authority."
+      "title": "01 · Design",
+      "text": "We start by understanding your business, your customers, and your goals. Then we design the site — layout, look, and feel — before writing a single line of code."
     },
     {
       "id": "develop",
-      "title": "02 · Precision Development",
-      "text": "We build with modern, lean technologies, ensuring sub-second response times, modular code quality, and fluid cross-device responsiveness."
+      "title": "02 · Build",
+      "text": "We build your site with clean, modern code — fast to load, smooth to use, and reliable on every device. You see progress at every milestone."
     },
     {
       "id": "deliver",
-      "title": "03 · Launch & Delivery",
-      "text": "We audit performance, configure SEO metadata and analytics, deliver documented source code, and ensure a seamless handover."
+      "title": "03 · Launch",
+      "text": "We test, optimise, and launch your site. After launch we make sure everything works perfectly — and you have full ownership of everything we built."
     }
   ],
   "team": [
     {
       "id": "sahera-banu",
       "name": "Sahera Banu",
-      "role": "Founder · Design & Creative Strategy",
-      "bio": "Directs brand identity, typography, visual hierarchy, and strategic user experience across all studio client engagements.",
+      "role": "Founder · Design & Creative Direction",
+      "discipline": "Brand · Visual Identity · UX Strategy",
+      "bio": "Sahera leads all design work at SaVi Tech — from brand identity and typography to the full visual experience of every website and product we build.",
       "initials": "SB"
     },
     {
       "id": "vijay-prasad",
       "name": "Vijay Prasad",
-      "role": "Co-founder · Engineering & Product Architecture",
-      "bio": "Leads software architecture, front-end development, high-performance web systems, and cloud infrastructure.",
+      "role": "Co-founder · Engineering & Product",
+      "discipline": "Web Engineering · Systems · Automation",
+      "bio": "Vijay handles all technical delivery — from front-end architecture and performance to backend systems, automations, and cloud infrastructure.",
       "initials": "VP"
     }
   ]
