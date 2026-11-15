@@ -1,50 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
   <defs>
-    <!-- Liquid Champagne Gold Gradient -->
-    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#E8D7C0"/>
-      <stop offset="45%" stop-color="#C5A880"/>
-      <stop offset="100%" stop-color="#9C7E55"/>
+    <!-- First commit cyan & ink gradient -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3EE0FF"/>
+      <stop offset="100%" stop-color="#14C4E6"/>
     </linearGradient>
 
-    <!-- Warm Silk Titanium Gradient -->
-    <linearGradient id="silkLinear" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#EDEAE3"/>
-    </linearGradient>
-
-    <!-- Radial Card Atmosphere -->
-    <radialGradient id="badgeAtmosphere" cx="50%" cy="40%" r="70%">
-      <stop offset="0%" stop-color="#161920"/>
-      <stop offset="100%" stop-color="#0B0C0E"/>
-    </radialGradient>
+    <!-- Subtle container glow -->
+    <filter id="softGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
   </defs>
 
-  <!-- Luxury Architectural Base Container -->
-  <rect x="24" y="24" width="464" height="464" rx="20" fill="url(#badgeAtmosphere)" stroke="rgba(197, 168, 128, 0.22)" stroke-width="1.5"/>
-  <rect x="34" y="34" width="444" height="444" rx="14" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+  <!-- Container Base: Midnight Navy #0B1B33 with stroke line rgba(244, 247, 251, 0.12) -->
+  <rect x="24" y="24" width="464" height="464" rx="96" fill="#0B1B33" stroke="rgba(62, 224, 255, 0.3)" stroke-width="2.5"/>
+  <rect x="36" y="36" width="440" height="440" rx="84" fill="none" stroke="rgba(244, 247, 251, 0.06)" stroke-width="1.5"/>
 
-  <!-- Architectural Datum Crosshairs (Horiz & Vert alignment) -->
-  <line x1="24" y1="256" x2="488" y2="256" stroke="rgba(197, 168, 128, 0.08)" stroke-width="1" stroke-dasharray="3 6"/>
-  <line x1="256" y1="24" x2="256" y2="488" stroke="rgba(197, 168, 128, 0.08)" stroke-width="1" stroke-dasharray="3 6"/>
+  <!-- Precision "SaVi" Architectural Typography Layout -->
+  <g transform="translate(48, 116)">
+    <!-- 'Sa' : Human-centered Design (Paper #F4F7FB) -->
+    <text x="32" y="196" font-family="'Outfit', -apple-system, sans-serif" font-size="168" font-weight="700" letter-spacing="-6" fill="#F4F7FB">Sa</text>
 
-  <!-- SV Duality Monogram Core -->
-  <g transform="translate(68, 68)">
-    <!-- 'S' Glyph (Sahera Banu: Fluid Design Intuition, Editorial Flow & Proportion) -->
-    <!-- Double-stroke precision curves in Warm Silk -->
-    <path d="M 216 68 C 172 62 96 74 76 116 C 56 160 102 188 152 208 C 224 234 262 268 252 320 C 240 376 166 388 94 364 C 68 354 50 340 42 324" 
-          stroke="url(#silkLinear)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- 'Vi' : Engineering Precision (Electric Cyan #3EE0FF with subtle glow) -->
+    <text x="216" y="196" font-family="'Outfit', -apple-system, sans-serif" font-size="168" font-weight="700" letter-spacing="-6" fill="url(#cyanGrad)">Vi</text>
 
-    <!-- 'V' Glyph (Vijay Prasad: Architectural Logic & Engineering Apex) -->
-    <!-- Interlocks with S at the central golden ratio node in Champagne Gold -->
-    <path d="M 226 76 L 298 334 L 358 76" 
-          stroke="url(#goldLinear)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-
-    <!-- Precision Registration Marks (Italian / Swiss Horology aesthetic) -->
-    <circle cx="298" cy="334" r="6" fill="#C5A880"/>
-    <circle cx="152" cy="208" r="5" fill="#EDEAE3"/>
+    <!-- Precision Horizontal Baseline Accent in Electric Cyan -->
+    <rect x="34" y="222" width="348" height="8" rx="4" fill="url(#cyanGrad)"/>
     
-    <!-- Micro Datum Anchor -->
-    <rect x="352" y="66" width="12" height="12" fill="none" stroke="#C5A880" stroke-width="2"/>
+    <!-- Micro-accent: Warm coral dot (First commit secondary: #FF8A3D) -->
+    <circle cx="372" cy="226" r="4" fill="#FF8A3D"/>
   </g>
 </svg>
