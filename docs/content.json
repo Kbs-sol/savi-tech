@@ -11,7 +11,7 @@
     "aboutTitle": "High-craft digital engineering. Direct founder collaboration.",
     "aboutParagraphs": [
       "SaVi Technologies (SaVi Tech) was founded on a straightforward principle: great digital products are built by close, agile teams with deep craft, not by layers of middle management.",
-      "The name reflects our foundational partnership: Sa (Design, Strategy & Creative Direction) and Vi (Product Engineering & Full-Stack Systems), united through technology (Tech).",
+      "The name reflects our foundational partnership: Sa (Design, Strategy & Creative Direction) and Vi (Product Engineering & Full-Stack Systems), united through technology (Tech). Sahera Banu is the founder. Vijay Prasad is the co-founder.",
       "We design and engineer bespoke web platforms, modern e-commerce flagships, and web applications that combine high aesthetic rigor with lightning-fast performance, resilient architecture, and measurable business growth."
     ],
     "aboutNote": "Direct collaboration with senior designers and engineers on every engagement.",
@@ -145,8 +145,8 @@
   ],
   "team": [
     {
-      "id": "sahara-banu",
-      "name": "Sahara Banu",
+      "id": "sahera-banu",
+      "name": "Sahera Banu",
       "role": "Founder · Design & Creative Strategy",
       "bio": "Directs brand identity, typography, visual hierarchy, and strategic user experience across all studio client engagements.",
       "initials": "SB"

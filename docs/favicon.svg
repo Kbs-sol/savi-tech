@@ -1,14 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
-    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="vGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#3EE0FF"/>
-      <stop offset="100%" stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#0066FF"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#080F1D"/>
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="rgba(62, 224, 255, 0.35)" stroke-width="1.5"/>
-  <path d="M 29 18 C 25 16 18 17 16 22 C 14 27 18 31 23 33 C 31 35 34 38 33 43 C 31 49 23 50 17 48" 
-        stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-  <path d="M 34 19 L 44 47 L 54 19" 
-        stroke="url(#favGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect width="64" height="64" rx="16" fill="#050B14"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="rgba(62, 224, 255, 0.4)" stroke-width="1.5"/>
+  <!-- Compact S -->
+  <path d="M 30 18 C 24 16 17 18 16 23 C 15 28 20 31 26 33 C 33 35 37 38 36 43 C 34 49 25 50 18 48" 
+        stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Compact V -->
+  <path d="M 35 19 L 45 47 L 53 19" 
+        stroke="url(#vGradFav)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

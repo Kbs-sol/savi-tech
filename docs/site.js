@@ -311,7 +311,7 @@
 
       // Open mailto fallback to guarantee founders get it immediately
       const subject = encodeURIComponent(`[SaVi Tech Project Inquiry] - ${interest} from ${name}`);
-      const body = encodeURIComponent(`Hi Sahara & Vijay,\n\nName: ${name}\nEmail: ${email}\nLooking for: ${interest}\n\nProject Overview:\n${message}\n\nSent via savitech.studio`);
+      const body = encodeURIComponent(`Hi Sahera & Vijay,\n\nName: ${name}\nEmail: ${email}\nLooking for: ${interest}\n\nProject Overview:\n${message}\n\nSent via savitech.studio`);
       window.location.href = `mailto:kbskumar331@gmail.com,contact@savitech.studio?subject=${subject}&body=${body}`;
 
       if (statusBox) {
