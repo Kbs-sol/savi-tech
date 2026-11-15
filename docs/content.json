@@ -83,7 +83,7 @@
       "metrics": ["Interactive Live Wall Simulation", "Instant Dimension & Aspect Math", "Automated Print Preparation"],
       "tech": ["React / Modern Stack", "TypeScript", "Canvas 2D API", "Cloudflare Workers"],
       "liveUrl": "https://theframehouse.in",
-      "previewUrl": "https://theframehouse.in",
+      "previewUrl": "https://photoframepfs.pages.dev/",
       "featured": true,
       "logo": ""
     }
@@ -114,16 +114,16 @@
       "detail": "We transform complex user journeys into friction-free digital workflows. High-fidelity wireframing, clickable prototypes, and comprehensive design tokens ready for development."
     },
     {
-      "id": "app-development",
-      "title": "Web & Mobile App Development",
-      "summary": "Cross-platform mobile applications and cloud-powered SaaS platforms engineered with modern backends.",
-      "detail": "End-to-end application engineering using modern mobile frameworks, Supabase, and Serverless APIs. Secure authentication, database modeling, push messaging, and continuous deployment."
+      "id": "whatsapp-automation",
+      "title": "WhatsApp Business Automation",
+      "summary": "Automated order updates, conversational chatbots, and instant lead capture directly on WhatsApp.",
+      "detail": "We turn WhatsApp into an automated sales and support engine: automated order confirmations, abandoned cart recovery, customer service AI routing, and instant CRM lead notifications."
     },
     {
-      "id": "seo-growth",
-      "title": "Organic SEO & Digital Growth",
-      "summary": "Structured schema markup, semantic content hierarchy, and technical SEO designed for organic discovery.",
-      "detail": "We engineer every page for maximum search visibility — including rich snippet JSON-LD, OpenGraph cards, core web vitals compliance, and strategic keyword architecture."
+      "id": "business-automation",
+      "title": "Fulfillment & Workflow Automations",
+      "summary": "Automated logistics with Shiprocket, payment reconciliations, and custom operational tools.",
+      "detail": "Eliminate repetitive manual tasks. We integrate automated shipping label creation, payment gateway sync, inventory alerts, and bespoke internal workflow dashboards."
     }
   ],
   "steps": [

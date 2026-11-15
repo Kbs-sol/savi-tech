@@ -1,79 +1,91 @@
-# SYSTEM LITERACY: SaVi Tech Platform & Codebase
+# SYSTEM LITERACY: SaVi Tech Platform & Developer Onboarding
 
-> **Confidential & Proprietary Studio Specification**  
-> **Brand**: SaVi Tech (SaVi Technologies)  
-> **Positioning**: High-Performance Boutique Web Engineering & Digital Product Studio  
-> **Founders**: Sahera Banu (Design & Creative Direction) & Vijay Prasad (Engineering & Product Architecture)  
+> **Confidential Studio Specification & Codebase Guide**  
+> **Brand Name**: SaVi Tech (Business Legal Entity: SaVi Technologies)  
+> **Brand Identity**: SaVi (`Sa`hera Banu + `Vi`jay Prasad)  
 > **Tagline**: `DESIGN. DEVELOP. DELIVER.`  
-> **Active Production Repository**: `https://github.com/Kbs-sol/savi-tech`  
-> **Live GitHub Pages URL**: `https://kbs-sol.github.io/savi-tech/`
+> **Studio Core Ethos**: Simple, Effective, and Efficient (No corporate fluff, no generic vision/mission speeches)  
+> **Target Audience**: Non-technical founders, brand owners, and business leaders who judge capability by **visual authority, tangible client results, seamless automations, and immediate real-world reliability**.  
+> **GitHub Repository**: `https://github.com/Kbs-sol/savi-tech`  
+> **Production Live URL**: `https://kbs-sol.github.io/savi-tech/`
 
 ---
 
-## 1. System Philosophy: Simple, Effective, and Efficient
+## 1. Studio Positioning: Simple, Effective, and Efficient
 
-The core guiding principle of **SaVi Tech** is **Anti-Bloat Engineering**:
-1. **Simple**: Zero framework overhead where not required. No heavy hydration penalties, no 5MB 3D canvas runtimes that freeze mobile devices. Every visitor arrives at content instantly.
-2. **Effective**: Clear, transparent conversion funnels. Potential high-ticket clients (founders, D2C brand owners, CTOs) validate studio credibility within 10 seconds through verified production metrics, real client showcases, and frictionless inquiry channels.
-3. **Efficient**: Ultra-fast static delivery via GitHub Pages / Cloudflare edge networks. Sub-800ms load times globally, semantic SEO schema markup for organic discoverability, and clean vanilla architecture (HTML5 + Modern CSS + Modular Vanilla JS + Lenis inertial scrolling).
+Most clients are non-technical. They do not care about raw benchmark jargon or abstract corporate "vision & mission" statements. What builds unshakeable confidence is:
+1. **Visual Authority & Polish**: A sleek, modern digital presence that proves immediately that SaVi Tech operates at an elite level.
+2. **Real Business Automations**: Offering practical solutions that directly generate revenue and streamline operations — notably **WhatsApp Business Automation**, customer engagement bots, automated fulfillment, and payment workflows.
+3. **Flawless Speed & Reliability**: The website itself loads instantly, navigates smoothly without lag, and works perfectly on every smartphone.
 
 ---
 
-## 2. Benchmark Case Studies & Reference Analysis
+## 2. Real Client Proof & Verified Live Previews
 
-The architecture and design decisions of this studio are calibrated against world-class digital benchmarks:
+All client builds must feature direct **Live Previews** (Proprietary GitHub code repositories must remain private):
 
-| Reference | Core Essence | How SaVi Tech Implements It Efficiently |
+| Client / Product | Live Production / Sandbox Preview | Business Outcome & Core Tech |
 | :--- | :--- | :--- |
-| **Two Halves (`twohalves.co`)** | Duality concept: Design & Engineering operating in unison. Bold typography and cinematic atmosphere. | Represented by the foundational unity of **Sahera (Sa: Design/Creative)** and **Vijay (Vi: Engineering/Systems)** in the **SaVi** identity. |
-| **Seed Jewelry (`seedjewelry.com`)** | Ultra-refined typography, generous negative space, microscopic borders, quiet confidence. | Clean typographic contrast (Outfit + IBM Plex Mono), hairline satin borders (`rgba(244, 247, 251, 0.12)`), and restraint. |
-| **Spyker Cars (`spykercars.com`)** | Hand-built bespoke craftsmanship, aviation dials, engineering precision. | The "Studio Benchmark" spec box and technical delivery framework (`DESIGN. DEVELOP. DELIVER.`). |
-| **Apple / Google** | Flawless contrast, instant accessibility, zero layout shifts (`dvh`), and direct value proposition. | Sub-800ms page load speeds, dynamic viewport height, and 100% responsive 60–120fps touch scrolling. |
-| **intru.in & vyraherbals.com** | Founder's verified client builds: Streetwear D2C and Organic Health/Wellness flagships. | Displayed with live flagship links and verified production metrics (e.g. 42% conversion lift, sub-800ms loads). |
-| **Vyra Hair Tracker** | Cross-platform mobile ecosystem build. | Interactive web sandbox demo hosted live at `https://vyra-preview.surge.sh/`. |
+| **intru.in** (INTRU Streetwear) | [https://intru.in](https://intru.in) | D2C Minimalist Streetwear Flagship. Dynamic size selector, instant cart, and streamlined Razorpay/UPI checkout. |
+| **Vyra Herbals** | [https://vyraherbals.com](https://vyraherbals.com) | Natural hair care e-commerce flagship. Pan-India automated delivery with Shiprocket courier integration and scalp concern diagnosis trays. |
+| **Vyra Hair Tracker** | [https://vyra-preview.surge.sh/](https://vyra-preview.surge.sh/) | Cross-platform digital health app. Routine progression scoring, photo milestone vault, and automated reminder alerts. |
+| **PhotoFrame PFS** (The Frame House) | [https://photoframepfs.pages.dev/](https://photoframepfs.pages.dev/) (also `theframehouse.in`) | Interactive custom photo frame builder with live dimension scaling, dynamic matting visualizer, and instant pricing engine. |
 
 ---
 
-## 3. Directory Layout & Codebase Architecture
+## 3. Reference Benchmarks & Aesthetic DNA
+
+When evolving the UI/UX, the agent should benchmark against these curated references:
+* **Two Halves (`twohalves.co`)**: The duality principle — Design and Engineering working as equal partners (**Sahera + Vijay = SaVi**). Bold typography and high visual confidence without clutter.
+* **Seed Jewelry (`seedjewelry.com`)**: Ultra-refined typography, generous negative space, microscopic hairline borders, and quiet luxury.
+* **Spyker Cars (`spykercars.com`)**: Handcrafted, bespoke precision. The feeling that your website is hand-built by masters rather than generated by a template.
+* **Apple & Google**: Instant accessibility, thumb-friendly mobile layouts, zero layout shifts (`dvh`), and direct, scannable value propositions.
+* **Henrietta & Enigma Scult**: Modern, punchy editorial layouts tailored for modern consumer and lifestyle audiences.
+
+---
+
+## 4. Services & Core Capabilities Model
+
+Instead of generic web design lists, the studio delivers high-impact commercial solutions:
+1. **Bespoke Web Design & Flagships**: Visual identities and websites that make brands look established, credible, and premium.
+2. **High-Performance Web Engineering**: Fast, responsive front-ends that work seamlessly across all mobile devices.
+3. **E-Commerce & D2C Storefronts**: Custom shops built for sales conversion, smooth checkout, and inventory tracking (like *intru.in*).
+4. **WhatsApp Business Automation & CRM**: Automated customer onboarding, order confirmation alerts, lead capture, and conversational AI chatbots directly on WhatsApp.
+5. **Business Process & Fulfillment Automations**: Automated courier sync (Shiprocket), payment gateways, and custom backend tools.
+6. **Custom Web Tools & Interactive Visualizers**: Real-time product configurators and canvas builders (like *PhotoFrame PFS*).
+
+---
+
+## 5. Architectural Map & Codebase Details
 
 ```
 savi-tech/
-├── docs/                           # Production web root deployed by GitHub Pages
-│   ├── index.html                  # Flagship Landing Page (Hero, Spec Box, Work, Process, Team)
-│   ├── work.html                   # Dedicated Case Studies & Live Interactive Previews
-│   ├── services.html               # 6 Core Studio Capabilities & Deliverables
-│   ├── about.html                  # Studio Manifesto, Origin of "SaVi", & Leadership Bios
-│   ├── contact.html                # Project Discovery Form with 24-hr Guaranteed Reply SLA
-│   ├── 404.html                    # Lightweight fallback error page
-│   ├── favicon.svg                 # Precision SVG SaVi emblem for browser tabs
-│   ├── content.json                # Single Source of Truth (SSOT) data model for studio copy & projects
-│   ├── site.js                     # Dynamic data hydrator, form handler, & Lenis scroll coordinator
+├── docs/                           # Deployed to GitHub Pages
+│   ├── index.html                  # Main Studio Flagship (Hero, Services, Automations, Projects, Team)
+│   ├── work.html                   # Dedicated Client Case Studies with live sandbox previews
+│   ├── services.html               # Comprehensive services (Websites, D2C, WhatsApp Automations)
+│   ├── about.html                  # The SaVi story (Sahera Banu + Vijay Prasad), no corporate fluff
+│   ├── contact.html                # Fast inquiry form with 24-hr reply guarantee
+│   ├── 404.html                    # Error fallback
+│   ├── content.json                # Single Source of Truth (SSOT) data model for all site content
+│   ├── site.js                     # Content hydration, mobile nav, contact handler, and Lenis scroll
 │   ├── styles.css                  # Responsive design tokens, grid system, and kinetic motion physics
-│   ├── assets/                     # Studio graphics and client brand assets
-│   │   ├── savi-logo.svg           # High-resolution architectural SaVi emblem
-│   │   └── clients/                # Transparent client logos for featured case studies
-│   │       ├── intru-logo.png
-│   │       ├── intru-logo-white.png
-│   │       ├── vyra-logo.png
-│   │       └── vyra-final-logo.png
-│   └── brand/                      # Vector SV brand mark iterations & color swatches
-├── src/                            # Optional TypeScript / Hono worker starter templates
-├── SYSTEM_LITERACY.md              # This comprehensive system documentation
-├── README.md                       # High-level repository orientation
-├── package.json                    # Local dev scripts (Vite / Wrangler preview)
-└── tsconfig.json                   # TypeScript configuration
+│   ├── favicon.svg                 # Precision SVG SaVi brand mark
+│   └── assets/                     # Brand vectors and client logos
+├── SYSTEM_LITERACY.md              # This foundational master manual
+├── README.md                       # High-level repo summary
+├── package.json                    # Dev environment scripts
+└── tsconfig.json                   # TypeScript config
 ```
 
 ---
 
-## 4. Visual Design System & Color Tokens
-
-The visual language adheres to the studio's signature midnight & electric cyan palette:
+## 6. Brand Color Tokens
 
 ```css
 :root {
-  --ink: #07111F;             /* Midnight Navy: Primary Base Background */
-  --ink-2: #0B1B33;           /* Deep Navy: Alternating Section Background */
+  --ink: #07111F;             /* Midnight Navy Base */
+  --ink-2: #0B1B33;           /* Alternating Deep Navy */
   --navy: #102444;            /* Surface Card Fill */
   --card: #12284A;            /* Container Card Surface */
   --card-hover: #17335D;      /* Interactive Hover Elevation */
@@ -86,48 +98,7 @@ The visual language adheres to the studio's signature midnight & electric cyan p
   --cyan-glow: rgba(62, 224, 255, 0.18);
   --cyan-border: rgba(62, 224, 255, 0.32);
   --orange: #FF8A3D;          /* Warm Coral Secondary Accent */
-  --white: #FFFFFF;
   --font: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 ```
-
----
-
-## 5. Privacy & Security Rules (MANDATORY FOR ALL AGENTS)
-
-> [!CAUTION]
-> **Strict Proprietary Code Shielding:**
-> 1. **NEVER expose raw GitHub repository URLs** for client projects (e.g. `intru-genz`, `vyra-herbals`, `vyra-hair-tracker`) on public-facing pages. Client source code is private intellectual property.
-> 2. Always link to **Live Production URLs** or **Public Sandbox Demos**:
->    * intru.in: `https://intru.in`
->    * Vyra Herbals: `https://vyraherbals.com`
->    * Vyra Hair Tracker: `https://vyra-preview.surge.sh/`
->    * PhotoFrame PFS: `https://theframehouse.in`
-
----
-
-## 6. Kinetic Motion & Scroll Architecture
-
-* **Engine**: **Lenis v1.1.18** (by Darkroom Engineering / Studio Freight).
-* **Desktop Physics**: Inertial momentum scroll with normalized wheel velocity and standard exponential easing (`Math.min(1, 1.001 - Math.pow(2, -10 * t))`).
-* **Mobile Hardware Optimization**: `smoothTouch: false` and hardware touch bypass enabled. On iOS and Android, Lenis steps aside to allow native hardware-accelerated 60/120Hz momentum scrolling.
-* **Scroll-Triggered Reveals**: Built with native `IntersectionObserver` targeting `.reveal` and adding `.is-visible` on viewport intersection. Uses GPU transforms (`transform: translateY(0)` and `opacity: 1`) to eliminate layout reflow.
-
----
-
-## 7. Strategic Recommendations for the Next Agent
-
-When onboarding another AI or human agent to continue evolving this codebase, keep these high-impact guidelines in mind:
-
-1. **Keep It Simple & Lean**:
-   * Do not introduce massive JS frameworks (like Next.js or heavy WebGL bundles) unless the user explicitly requests dynamic server-side rendering. The current static build delivers perfect Lighthouse scores (98–100) and instant edge loading.
-2. **Organic Client Acquisition Levers**:
-   * **Case Study Teardowns**: Expand `/work.html` with short, deconstructed engineering stories (e.g., *"How we achieved 780ms load times on intru.in using Cloudflare edge caching"*). This captures high-intent organic Google searches from founders looking for high-performance builds.
-   * **Live Interactive Widgets**: Add an interactive ROI / Timeline calculator widget on `/services.html` where prospective clients can select deliverables and see estimated milestone sprints.
-3. **Conversion Friction Minimization**:
-   * Maintain the direct founder mailto fallback in `docs/site.js` so client project inquiries are never lost even without an active mail server.
-   * Consider connecting a free serverless webhook (e.g., Formspree or Resend) to dispatch inquiries directly to `kbskumar331@gmail.com` and `contact@savitech.studio`.
-4. **Visual Polish & Micro-Delights**:
-   * Maintain the crisp, high-contrast **SaVi** branding mark in both dark and light modes.
-   * Keep typography clean and readable: Google Font **Outfit** for geometric authority paired with **IBM Plex Mono** for technical precision.
