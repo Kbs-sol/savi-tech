@@ -38,7 +38,7 @@
       "metrics": ["Sub-800ms Average Page Load", "42% Conversion Boost", "Zero-Latency Cart Actions"],
       "tech": ["TypeScript", "Tailwind CSS", "Cloudflare Pages", "Razorpay / UPI Integration"],
       "liveUrl": "https://intru.in",
-      "githubUrl": "https://github.com/Kbs-sol/intru-genz",
+      "previewUrl": "https://intru.in",
       "featured": true,
       "logo": "assets/clients/intru-logo-white.png"
     },
@@ -51,9 +51,9 @@
       "summary": "100% natural, chemical-free hair care flagship store featuring interactive scalp concern trays and automated fulfillment.",
       "description": "Designed and deployed a modern e-commerce storefront for an ISO 9001:2015 & GMP-certified organic hair care brand. Built interactive product discovery tools, customer review aggregators, and automated Shiprocket courier sync to streamline delivery across Pan-India.",
       "metrics": ["Pan-India Automated Logistics", "100% Natural Brand Storytelling", "ISO & GMP Trust Badges"],
-      "tech": ["HTML5 / Vanilla JS", "Tailwind CSS", "Shiprocket API", "Supabase Backend"],
+      "tech": ["HTML5 / Modern JS", "Tailwind CSS", "Shiprocket API", "Supabase Backend"],
       "liveUrl": "https://vyraherbals.com",
-      "githubUrl": "https://github.com/vyraherbals-ux/vyra-herbals",
+      "previewUrl": "https://vyraherbals.com",
       "featured": true,
       "logo": "assets/clients/vyra-final-logo.png"
     },
@@ -62,13 +62,13 @@
       "title": "Vyra Hair Tracker",
       "client": "Vyra Ecosystem",
       "category": "Mobile Application / Digital Health",
-      "scope": "Flutter Mobile App, Supabase Database, Automated Push Reminders, Routine Scoring",
+      "scope": "Cross-Platform App Architecture, Supabase Database, Automated Reminders, Routine Scoring",
       "summary": "Cross-platform hair health progression tracker with routine scoring, photo milestones, and push reminders.",
-      "description": "Developed a full-featured mobile companion app enabling users to track hair recovery journeys over 12-week cycles. Built with secure Supabase authentication, Cloudinary photographic progress vaults, and intelligent streak-tracking algorithms.",
+      "description": "Developed a full-featured companion application enabling users to track hair recovery journeys over 12-week cycles. Built with secure Supabase authentication, photographic progress vaults, and intelligent streak-tracking algorithms. Interactive web sandbox preview available.",
       "metrics": ["12-Week Progressive Regimen Tracker", "Encrypted Milestone Vault", "Automated Push Notifications"],
-      "tech": ["Flutter / Dart", "Supabase", "Cloudinary", "Edge Functions"],
+      "tech": ["Cross-Platform Mobile", "Supabase", "Cloudinary", "Edge Functions"],
       "liveUrl": "",
-      "githubUrl": "https://github.com/Kbs-sol/vyra-hair-tracker",
+      "previewUrl": "https://vyra-preview.surge.sh/",
       "featured": true,
       "logo": "assets/clients/vyra-logo.png"
     },
@@ -81,9 +81,9 @@
       "summary": "High-fidelity interactive custom photo framing previewer with live dimension scaling and material costing.",
       "description": "Architected a custom photo frame builder allowing customers to upload personal photos, simulate museum-grade matting and glass finishes on live room wall renders, and order precision-cut frames online with immediate dynamic pricing calculations.",
       "metrics": ["Interactive Live Wall Simulation", "Instant Dimension & Aspect Math", "Automated Print Preparation"],
-      "tech": ["React / TanStack", "TypeScript", "Canvas 2D API", "Cloudflare Workers"],
+      "tech": ["React / Modern Stack", "TypeScript", "Canvas 2D API", "Cloudflare Workers"],
       "liveUrl": "https://theframehouse.in",
-      "githubUrl": "https://github.com/Kbs-sol/photoframepfs",
+      "previewUrl": "https://theframehouse.in",
       "featured": true,
       "logo": ""
     }
@@ -116,8 +116,8 @@
     {
       "id": "app-development",
       "title": "Web & Mobile App Development",
-      "summary": "Cross-platform mobile applications and cloud-powered SaaS platforms engineered with Flutter and modern backends.",
-      "detail": "End-to-end application engineering using Flutter, React, Supabase, and Serverless APIs. Secure authentication, database modeling, push messaging, and continuous deployment."
+      "summary": "Cross-platform mobile applications and cloud-powered SaaS platforms engineered with modern backends.",
+      "detail": "End-to-end application engineering using modern mobile frameworks, Supabase, and Serverless APIs. Secure authentication, database modeling, push messaging, and continuous deployment."
     },
     {
       "id": "seo-growth",

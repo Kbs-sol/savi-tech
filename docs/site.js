@@ -38,7 +38,7 @@
       brand.aboutParagraphs.forEach(pText => {
         const p = document.createElement("p");
         p.textContent = pText;
-        p.style.marginBottom = "18px";
+        p.style.marginBottom = "20px";
         aboutContainer.appendChild(p);
       });
     }
@@ -73,7 +73,7 @@
     }
   }
 
-  // Render Projects Grid
+  // Render Projects Grid (NO GITHUB LINKS - PRIVACY FIRST, ONLY LIVE AND PREVIEW URLS)
   function renderProjects(projects, targetId) {
     const container = document.getElementById(targetId || "projects-grid");
     if (!container || !Array.isArray(projects)) return;
@@ -81,7 +81,7 @@
     container.replaceChildren();
     projects.forEach(proj => {
       const card = document.createElement("article");
-      card.className = "project-card";
+      card.className = "project-card reveal";
 
       // Top logo / category
       const top = document.createElement("div");
@@ -146,7 +146,7 @@
 
       body.append(title, summary, metricsWrap, techWrap);
 
-      // Footer links
+      // Footer links: only live production or sandbox preview, NEVER github
       const foot = document.createElement("div");
       foot.className = "project-footer";
 
@@ -159,18 +159,18 @@
         live.target = "_blank";
         live.rel = "noopener noreferrer";
         live.className = "link-out";
-        live.innerHTML = "Visit Live ↗";
+        live.innerHTML = "Visit Flagship ↗";
         links.appendChild(live);
       }
 
-      if (proj.githubUrl) {
-        const repo = document.createElement("a");
-        repo.href = proj.githubUrl;
-        repo.target = "_blank";
-        repo.rel = "noopener noreferrer";
-        repo.className = "link-repo";
-        repo.innerHTML = "GitHub Code ↗";
-        links.appendChild(repo);
+      if (proj.previewUrl && proj.previewUrl !== proj.liveUrl) {
+        const prev = document.createElement("a");
+        prev.href = proj.previewUrl;
+        prev.target = "_blank";
+        prev.rel = "noopener noreferrer";
+        prev.className = "link-preview";
+        prev.innerHTML = "Interactive Web Preview ↗";
+        links.appendChild(prev);
       }
 
       const clientLabel = document.createElement("span");
@@ -184,6 +184,8 @@
       card.append(top, body, foot);
       container.appendChild(card);
     });
+
+    observeReveals();
   }
 
   // Render Services
@@ -194,11 +196,11 @@
     grid.replaceChildren();
     services.forEach((s, idx) => {
       const card = document.createElement("article");
-      card.className = "service-card";
+      card.className = "service-card reveal";
 
       const idxSpan = document.createElement("span");
       idxSpan.className = "index";
-      idxSpan.textContent = "0" + (idx + 1) + " · CAPABILITY";
+      idxSpan.textContent = "0" + (idx + 1) + " · ATELIER CAPABILITY";
 
       const title = document.createElement("h3");
       title.textContent = s.title;
@@ -209,6 +211,8 @@
       card.append(idxSpan, title, p);
       grid.appendChild(card);
     });
+
+    observeReveals();
   }
 
   // Render Process Steps
@@ -219,7 +223,7 @@
     grid.replaceChildren();
     steps.forEach(step => {
       const card = document.createElement("article");
-      card.className = "step-card";
+      card.className = "step-card reveal";
 
       const title = document.createElement("h3");
       title.textContent = step.title;
@@ -230,6 +234,8 @@
       card.append(title, p);
       grid.appendChild(card);
     });
+
+    observeReveals();
   }
 
   // Render Team
@@ -240,7 +246,7 @@
     grid.replaceChildren();
     team.forEach(member => {
       const card = document.createElement("article");
-      card.className = "team-card";
+      card.className = "team-card reveal";
 
       const avatar = document.createElement("div");
       avatar.className = "avatar-badge";
@@ -262,9 +268,11 @@
       card.append(avatar, info);
       grid.appendChild(card);
     });
+
+    observeReveals();
   }
 
-  // Setup Mobile Nav Toggle
+  // Setup Mobile Nav Toggle with Lock
   function setupNav() {
     const menuBtn = document.getElementById("menu-btn");
     const nav = document.getElementById("nav");
@@ -272,6 +280,15 @@
       menuBtn.addEventListener("click", () => {
         const isOpen = nav.classList.toggle("open");
         menuBtn.setAttribute("aria-expanded", String(isOpen));
+        document.body.style.overflow = isOpen ? "hidden" : "";
+      });
+
+      // Close when clicking link on mobile
+      nav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          nav.classList.remove("open");
+          document.body.style.overflow = "";
+        });
       });
     }
 
@@ -300,7 +317,6 @@
         return;
       }
 
-      // Store lead locally & show confirmation
       try {
         const leads = JSON.parse(localStorage.getItem("savi_inquiries") || "[]");
         leads.push({ name, email, interest, message, date: new Date().toISOString() });
@@ -309,13 +325,13 @@
         console.warn("Storage unavailable", err);
       }
 
-      // Open mailto fallback to guarantee founders get it immediately
+      // Direct founder mailto fallback
       const subject = encodeURIComponent(`[SaVi Tech Project Inquiry] - ${interest} from ${name}`);
-      const body = encodeURIComponent(`Hi Sahera & Vijay,\n\nName: ${name}\nEmail: ${email}\nLooking for: ${interest}\n\nProject Overview:\n${message}\n\nSent via savitech.studio`);
+      const body = encodeURIComponent(`Hi Sahera & Vijay,\n\nName: ${name}\nEmail: ${email}\nLooking for: ${interest}\n\nProject Scope & Goals:\n${message}\n\nSent via savitech.studio`);
       window.location.href = `mailto:kbskumar331@gmail.com,contact@savitech.studio?subject=${subject}&body=${body}`;
 
       if (statusBox) {
-        statusBox.textContent = `Thank you, ${name}. Your project inquiry has been launched in your email client and saved. We'll reply within 24 hours.`;
+        statusBox.textContent = `Thank you, ${name}. Your project inquiry has been queued directly to Sahera & Vijay. We guarantee a reply within 24 hours.`;
         statusBox.className = "form-status success";
         statusBox.style.display = "block";
       }
@@ -324,13 +340,69 @@
     });
   }
 
+  // Viewport Reveal Observer
+  let observer;
+  function observeReveals() {
+    if (!("IntersectionObserver" in window)) {
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-visible"));
+      return;
+    }
+    if (!observer) {
+      observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    }
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach(el => observer.observe(el));
+  }
+
+  // Lightweight Inertial Smooth Scrolling (Lenis Integration with Native Mobile Bypass)
+  function initSmoothScroll() {
+    // On touch devices or reduced motion, native hardware momentum is best for 60fps
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouch) return; // Keep mobile 100% native 60-120fps
+
+    // Dynamically load Lenis from unpkg for zero-bundle weight
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/lenis@1.1.18/dist/lenis.min.js";
+    script.onload = () => {
+      if (typeof window.Lenis === "function") {
+        const lenis = new window.Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          smoothTouch: false // Crucial for mobile performance
+        });
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+      }
+    };
+    document.head.appendChild(script);
+  }
+
   // Init
   async function init() {
     setupNav();
     setupContactForm();
+    initSmoothScroll();
 
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Mark existing static cards for reveal
+    document.querySelectorAll(".project-card, .service-card, .step-card, .team-card, .inbound-box, .studio-spec-box").forEach(el => {
+      el.classList.add("reveal");
+    });
+    observeReveals();
 
     try {
       const res = await fetch("content.json");

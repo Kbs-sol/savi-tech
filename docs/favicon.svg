@@ -1,8 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="10" fill="#0C0D10"/>
-  <rect x="2" y="2" width="60" height="60" rx="8" fill="none" stroke="#262830" stroke-width="1.5"/>
-  <path d="M 28 16 L 16 16 C 11 16 9 19 9 23 C 9 31 27 30 27 39 C 27 46 23 48 17 48 L 7 48" 
-        stroke="#F5F2EB" stroke-width="5" stroke-linecap="square" fill="none"/>
-  <path d="M 29 16 L 39 48 L 49 16" 
-        stroke="#FF542E" stroke-width="5" stroke-linecap="square" fill="none"/>
+  <defs>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8D7C0"/>
+      <stop offset="100%" stop-color="#C5A880"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="8" fill="#0B0C0E"/>
+  <rect x="1" y="1" width="62" height="62" rx="7" fill="none" stroke="rgba(197, 168, 128, 0.35)" stroke-width="1"/>
+  <!-- Elegant S -->
+  <path d="M 30 18 C 24 16 16 18 14 24 C 12 30 18 33 24 35 C 32 38 36 41 35 46 C 33 51 24 51 16 48" 
+        stroke="#EDEAE3" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <!-- Sharp Gold V -->
+  <path d="M 32 18 L 42 48 L 50 18" 
+        stroke="url(#favGold)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>
