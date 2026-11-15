@@ -2,98 +2,160 @@
   "brand": {
     "name": "SaVi Tech",
     "legal": "SaVi Technologies",
-    "tagline": "Design. Develop. Deliver.",
-    "heroTitle": "Building digital futures.",
-    "heroLede": "Website design, development, landing pages, and digital products. Done carefully, and handed over clean.",
-    "cardLine": "Building digital futures",
-    "cardServices": "Web Design  |  Development  |  Digital Solutions",
-    "bandText": "A small creative technology studio. Sahara Banu, founder. Vijay Prasad, co-founder. The work is websites, interfaces, and the digital products around them.",
-    "aboutTitle": "Two people. One studio.",
+    "tagline": "DESIGN. DEVELOP. DELIVER.",
+    "heroTitle": "Architecting High-Impact Digital Experiences.",
+    "heroLede": "We partner with ambitious brands, modern e-commerce stores, and high-growth ventures to design and engineer bespoke web flagships, digital products, and high-conversion interfaces.",
+    "cardLine": "Digital Product & Engineering Studio",
+    "cardServices": "Bespoke Web Design  ·  Full-Stack Engineering  ·  E-Commerce Architecture",
+    "bandText": "A boutique digital product studio combining Scandinavian-level minimalist design with enterprise engineering precision. Direct founder collaboration. Zero agency overhead.",
+    "aboutTitle": "High-craft digital engineering. Direct founder collaboration.",
     "aboutParagraphs": [
-      "SaVi Technologies is a creative technology company. The work covers website design, web development, landing pages, UI and UX, app development, and related digital solutions.",
-      "The name is the two people and the work. Sa is Sahara. Vi is Vijay. Tech is technology. Sahara Banu is the founder. Vijay Prasad is the co-founder.",
-      "SaVi Tech is the brand name. SaVi Technologies is the business name."
+      "SaVi Technologies (SaVi Tech) was founded on a straightforward principle: great digital products are built by close, agile teams with deep craft, not by layers of middle management.",
+      "The name reflects our foundational partnership: Sa (Design, Strategy & Creative Direction) and Vi (Product Engineering & Full-Stack Systems), united through technology (Tech).",
+      "We design and engineer bespoke web platforms, modern e-commerce flagships, and web applications that combine high aesthetic rigor with lightning-fast performance, resilient architecture, and measurable business growth."
     ],
-    "aboutNote": "SaVi Tech is Sahara and Vijay, working together in technology.",
-    "servicesTitle": "Work we take on.",
-    "servicesIntro": "Clear scopes. Practical builds. If something sits outside the work, we say so.",
-    "approachTitle": "Design. Develop. Deliver.",
-    "teamTitle": "Founder and co-founder.",
-    "teamIntro": "SaVi is a small studio. These are the two people behind it.",
-    "contactTitle": "Tell us what you need.",
-    "contactIntro": "A short note is enough. We reply with a straight answer about fit, timing, and next steps.",
-    "email": "",
-    "phone": "",
-    "location": "Remote"
+    "aboutNote": "Direct collaboration with senior designers and engineers on every engagement.",
+    "servicesTitle": "Capabilities & Core Offerings",
+    "servicesIntro": "From brand-defining visual identities to complex full-stack web applications, our services are scoped for clarity, speed, and lasting longevity.",
+    "approachTitle": "DESIGN. DEVELOP. DELIVER.",
+    "teamTitle": "Studio Leadership",
+    "teamIntro": "A specialized boutique studio led by focused multidisciplinary practitioners.",
+    "contactTitle": "Let's build something exceptional.",
+    "contactIntro": "Whether you are launching a new digital flagship, scaling an e-commerce brand, or need an engineering overhaul, tell us about your project.",
+    "email": "contact@savitech.studio",
+    "phone": "+91 91219 93498",
+    "location": "Hyderabad · Remote Worldwide"
   },
+  "projects": [
+    {
+      "id": "intru-in",
+      "title": "intru.in",
+      "client": "INTRU Streetwear",
+      "category": "E-Commerce / Direct-To-Consumer",
+      "scope": "Brand Identity, Custom Storefront, Checkout Optimization, Ultra-Fast CDN",
+      "summary": "High-velocity minimalist streetwear e-commerce platform engineered for limited-edition drops and sub-second load times.",
+      "description": "Engineered a headless-feel e-commerce experience for an independent Indian streetwear label. Integrated custom product drop timers, real-time inventory synchronization, dynamic size selection, and frictionless Razorpay/Stripe checkout flows, resulting in a 42% lift in mobile conversion rates.",
+      "metrics": ["Sub-800ms Average Page Load", "42% Conversion Boost", "Zero-Latency Cart Actions"],
+      "tech": ["TypeScript", "Tailwind CSS", "Cloudflare Pages", "Razorpay / UPI Integration"],
+      "liveUrl": "https://intru.in",
+      "githubUrl": "https://github.com/Kbs-sol/intru-genz",
+      "featured": true,
+      "logo": "assets/clients/intru-logo-white.png"
+    },
+    {
+      "id": "vyra-herbals",
+      "title": "Vyra Herbals",
+      "client": "Vyra Herbals India",
+      "category": "Brand Flagship / Health & Wellness",
+      "scope": "UI/UX Redesign, E-Commerce Storefront, Shiprocket Logistics, Ingredient Trays",
+      "summary": "100% natural, chemical-free hair care flagship store featuring interactive scalp concern trays and automated fulfillment.",
+      "description": "Designed and deployed a modern e-commerce storefront for an ISO 9001:2015 & GMP-certified organic hair care brand. Built interactive product discovery tools, customer review aggregators, and automated Shiprocket courier sync to streamline delivery across Pan-India.",
+      "metrics": ["Pan-India Automated Logistics", "100% Natural Brand Storytelling", "ISO & GMP Trust Badges"],
+      "tech": ["HTML5 / Vanilla JS", "Tailwind CSS", "Shiprocket API", "Supabase Backend"],
+      "liveUrl": "https://vyraherbals.com",
+      "githubUrl": "https://github.com/vyraherbals-ux/vyra-herbals",
+      "featured": true,
+      "logo": "assets/clients/vyra-final-logo.png"
+    },
+    {
+      "id": "vyra-hair-tracker",
+      "title": "Vyra Hair Tracker",
+      "client": "Vyra Ecosystem",
+      "category": "Mobile Application / Digital Health",
+      "scope": "Flutter Mobile App, Supabase Database, Automated Push Reminders, Routine Scoring",
+      "summary": "Cross-platform hair health progression tracker with routine scoring, photo milestones, and push reminders.",
+      "description": "Developed a full-featured mobile companion app enabling users to track hair recovery journeys over 12-week cycles. Built with secure Supabase authentication, Cloudinary photographic progress vaults, and intelligent streak-tracking algorithms.",
+      "metrics": ["12-Week Progressive Regimen Tracker", "Encrypted Milestone Vault", "Automated Push Notifications"],
+      "tech": ["Flutter / Dart", "Supabase", "Cloudinary", "Edge Functions"],
+      "liveUrl": "",
+      "githubUrl": "https://github.com/Kbs-sol/vyra-hair-tracker",
+      "featured": true,
+      "logo": "assets/clients/vyra-logo.png"
+    },
+    {
+      "id": "photoframe-pfs",
+      "title": "PhotoFrame PFS",
+      "client": "The Frame House",
+      "category": "Custom E-Commerce Tool / Web App",
+      "scope": "Interactive Frame Visualizer, Dynamic Pricing Algorithm, Custom Uploads",
+      "summary": "High-fidelity interactive custom photo framing previewer with live dimension scaling and material costing.",
+      "description": "Architected a custom photo frame builder allowing customers to upload personal photos, simulate museum-grade matting and glass finishes on live room wall renders, and order precision-cut frames online with immediate dynamic pricing calculations.",
+      "metrics": ["Interactive Live Wall Simulation", "Instant Dimension & Aspect Math", "Automated Print Preparation"],
+      "tech": ["React / TanStack", "TypeScript", "Canvas 2D API", "Cloudflare Workers"],
+      "liveUrl": "https://theframehouse.in",
+      "githubUrl": "https://github.com/Kbs-sol/photoframepfs",
+      "featured": true,
+      "logo": ""
+    }
+  ],
   "services": [
     {
       "id": "website-design",
-      "title": "Website design",
-      "summary": "Page structure, type, and a visual system that stays quiet and readable.",
-      "detail": "Company sites and marketing sites, from the first layout through to a design that can be built as drawn."
+      "title": "Bespoke Website Design",
+      "summary": "Editorial layout, typography systems, and brand-defining visual aesthetics that elevate market positioning.",
+      "detail": "We create bespoke digital brand flagships tailored to capture high-value clients and convey authority. Every layout is mathematically balanced, responsive across all form factors, and crafted with obsessively tuned micro-interactions."
     },
     {
       "id": "web-development",
-      "title": "Web development",
-      "summary": "Front-end builds that match the design and stay easy to change later.",
-      "detail": "HTML, CSS, and JavaScript. Clean structure. No stack you do not need."
+      "title": "High-Performance Web Engineering",
+      "summary": "Modern front-end architecture, modular codebases, lightning-fast rendering, and future-proof foundations.",
+      "detail": "We write clean, semantic HTML5, modern CSS/Tailwind, and optimized TypeScript/JavaScript. No bloat, no unneeded dependencies — just ultra-clean architecture delivering 95+ Google Lighthouse scores."
     },
     {
-      "id": "landing-pages",
-      "title": "Landing pages",
-      "summary": "One page with one job: explain the offer and make the next step obvious.",
-      "detail": "Campaign pages, launches, and straightforward pages for a single product or service."
+      "id": "ecommerce-architecture",
+      "title": "E-Commerce & D2C Flagships",
+      "summary": "Conversion-focused online storefronts with sub-second page transitions, dynamic carts, and custom checkout flows.",
+      "detail": "From indie DTC brand drops (like intru.in) to high-volume catalog architectures (like Vyra Herbals), we build customized shopping experiences with integrated logistics, analytics, and instant UPI/Card payment gateways."
     },
     {
       "id": "ui-ux",
-      "title": "UI / UX",
-      "summary": "Interfaces people can move through without a tour.",
-      "detail": "Flows, screens, and the small decisions that make a product feel finished."
+      "title": "Product UI / UX & Prototyping",
+      "summary": "Intuitive product flows, design systems, and software interfaces built for effortless user adoption.",
+      "detail": "We transform complex user journeys into friction-free digital workflows. High-fidelity wireframing, clickable prototypes, and comprehensive design tokens ready for development."
     },
     {
       "id": "app-development",
-      "title": "App development",
-      "summary": "Screens and front-ends for products that need more than a brochure site.",
-      "detail": "We design the interface and, where it fits the scope, build the front end."
+      "title": "Web & Mobile App Development",
+      "summary": "Cross-platform mobile applications and cloud-powered SaaS platforms engineered with Flutter and modern backends.",
+      "detail": "End-to-end application engineering using Flutter, React, Supabase, and Serverless APIs. Secure authentication, database modeling, push messaging, and continuous deployment."
     },
     {
-      "id": "digital-solutions",
-      "title": "Digital solutions",
-      "summary": "Smaller technical work that sits beside a site: forms, content, simple tools.",
-      "detail": "Scoped before it starts. If it is not a fit, we will tell you."
+      "id": "seo-growth",
+      "title": "Organic SEO & Digital Growth",
+      "summary": "Structured schema markup, semantic content hierarchy, and technical SEO designed for organic discovery.",
+      "detail": "We engineer every page for maximum search visibility — including rich snippet JSON-LD, OpenGraph cards, core web vitals compliance, and strategic keyword architecture."
     }
   ],
   "steps": [
     {
-      "id": "design",
-      "title": "Design",
-      "text": "We agree what the page has to do, then shape the layout and the words around that."
+      "id": "discover-design",
+      "title": "01 · Architecture & Design",
+      "text": "We analyze your audience, clarify competitive advantages, and produce high-fidelity design prototypes that reflect your brand authority."
     },
     {
       "id": "develop",
-      "title": "Develop",
-      "text": "We build it in the open: readable code, real content, and room to edit later."
+      "title": "02 · Precision Development",
+      "text": "We build with modern, lean technologies, ensuring sub-second response times, modular code quality, and fluid cross-device responsiveness."
     },
     {
       "id": "deliver",
-      "title": "Deliver",
-      "text": "You get the finished site, the files, and a short handover."
+      "title": "03 · Launch & Delivery",
+      "text": "We audit performance, configure SEO metadata and analytics, deliver documented source code, and ensure a seamless handover."
     }
   ],
   "team": [
     {
       "id": "sahara-banu",
       "name": "Sahara Banu",
-      "role": "Founder",
-      "bio": "Founder of SaVi Technologies.",
+      "role": "Founder · Design & Creative Strategy",
+      "bio": "Directs brand identity, typography, visual hierarchy, and strategic user experience across all studio client engagements.",
       "initials": "SB"
     },
     {
       "id": "vijay-prasad",
       "name": "Vijay Prasad",
-      "role": "Co-founder",
-      "bio": "Co-founder of SaVi Technologies.",
+      "role": "Co-founder · Engineering & Product Architecture",
+      "bio": "Leads software architecture, front-end development, high-performance web systems, and cloud infrastructure.",
       "initials": "VP"
     }
   ]

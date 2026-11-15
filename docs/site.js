@@ -1,275 +1,355 @@
 (function () {
-  const page = document.body.dataset.page || "";
+  "use strict";
 
+  // Safeguarded element text updater
   function text(id, value) {
     const el = document.getElementById(id);
     if (el && value != null && value !== "") el.textContent = value;
   }
 
-  function fillBrand(brand) {
+  // Populate brand copy
+  function applyBrand(brand) {
+    if (!brand) return;
     text("hero-title", brand.heroTitle);
     text("hero-lede", brand.heroLede);
     text("hero-tagline", brand.tagline);
     text("card-line", brand.cardLine);
     text("card-services", brand.cardServices);
-    text("card-tag", (brand.tagline || "").toUpperCase());
     text("band-text", brand.bandText);
     text("services-title", brand.servicesTitle);
     text("services-intro", brand.servicesIntro);
     text("about-title", brand.aboutTitle);
     text("about-note", brand.aboutNote);
-    text("approach-title", brand.approachTitle);
     text("team-title", brand.teamTitle);
     text("team-intro", brand.teamIntro);
     text("contact-title", brand.contactTitle);
     text("contact-intro", brand.contactIntro);
-    text("footer-tag", brand.tagline);
-    text("footer-legal-name", brand.legal || brand.name);
 
-    const about = document.getElementById("about-body");
-    if (about && Array.isArray(brand.aboutParagraphs)) {
-      about.replaceChildren();
-      brand.aboutParagraphs.forEach((paragraph) => {
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const legalEl = document.getElementById("footer-legal-name");
+    if (legalEl) legalEl.textContent = brand.legal || brand.name || "SaVi Technologies";
+
+    // About paragraphs
+    const aboutContainer = document.getElementById("about-body");
+    if (aboutContainer && Array.isArray(brand.aboutParagraphs)) {
+      aboutContainer.replaceChildren();
+      brand.aboutParagraphs.forEach(pText => {
         const p = document.createElement("p");
-        p.textContent = paragraph;
-        about.appendChild(p);
+        p.textContent = pText;
+        p.style.marginBottom = "18px";
+        aboutContainer.appendChild(p);
       });
     }
 
-    document.querySelectorAll("[data-brand-name]").forEach((el) => {
-      el.textContent = brand.name || "SaVi Tech";
-    });
-
-    const meta = document.getElementById("contact-meta");
-    if (meta) {
-      meta.replaceChildren();
-      const rows = [
-        ["Email", brand.email, brand.email ? "mailto:" + brand.email : ""],
-        ["Phone", brand.phone, brand.phone ? "tel:" + String(brand.phone).replace(/\s/g, "") : ""],
-        ["Where", brand.location, ""]
+    // Contact metadata
+    const contactMeta = document.getElementById("contact-meta");
+    if (contactMeta) {
+      contactMeta.replaceChildren();
+      const items = [
+        { label: "Direct Inquiries", value: brand.email || "contact@savitech.studio", href: "mailto:" + (brand.email || "contact@savitech.studio") },
+        { label: "Phone / WhatsApp", value: brand.phone || "+91 91219 93498", href: "tel:" + (brand.phone ? brand.phone.replace(/\s+/g, '') : "+919121993498") },
+        { label: "Studio Location", value: brand.location || "Hyderabad · Worldwide Remote", href: null }
       ];
-      rows.forEach(([label, value, href]) => {
-        if (!value) return;
+
+      items.forEach(item => {
         const wrap = document.createElement("div");
+        wrap.className = "meta-item";
         const dt = document.createElement("dt");
-        dt.textContent = label;
+        dt.textContent = item.label;
         const dd = document.createElement("dd");
-        if (href) {
+        if (item.href) {
           const a = document.createElement("a");
-          a.href = href;
-          a.textContent = value;
+          a.href = item.href;
+          a.textContent = item.value;
           dd.appendChild(a);
         } else {
-          dd.textContent = value;
+          dd.textContent = item.value;
         }
         wrap.append(dt, dd);
-        meta.appendChild(wrap);
+        contactMeta.appendChild(wrap);
       });
-    }
-
-    const interest = document.getElementById("interest-select");
-    if (interest && interest.options.length <= 1 && Array.isArray(window.__saviServices)) {
-      interest.replaceChildren();
-      window.__saviServices.forEach((service) => {
-        const option = document.createElement("option");
-        option.textContent = service.title;
-        interest.appendChild(option);
-      });
-      const other = document.createElement("option");
-      other.textContent = "Something else";
-      interest.appendChild(other);
     }
   }
 
-  function renderServices(services, mode) {
-    const grid = document.getElementById(mode === "full" ? "service-list" : "service-grid");
-    if (!grid) return;
-    grid.replaceChildren();
-    services.forEach((service, index) => {
-      if (mode === "full") {
-        const row = document.createElement("article");
-        row.className = "service-row";
-        row.id = service.id || "service-" + (index + 1);
-        const num = document.createElement("span");
-        num.className = "index";
-        num.textContent = String(index + 1).padStart(2, "0");
-        const heading = document.createElement("h3");
-        heading.textContent = service.title || "Service";
-        const copy = document.createElement("div");
-        const summary = document.createElement("p");
-        summary.textContent = service.summary || "";
-        const detail = document.createElement("p");
-        detail.className = "more";
-        detail.textContent = service.detail || "";
-        copy.append(summary, detail);
-        row.append(num, heading, copy);
-        grid.appendChild(row);
-        return;
+  // Render Projects Grid
+  function renderProjects(projects, targetId) {
+    const container = document.getElementById(targetId || "projects-grid");
+    if (!container || !Array.isArray(projects)) return;
+
+    container.replaceChildren();
+    projects.forEach(proj => {
+      const card = document.createElement("article");
+      card.className = "project-card";
+
+      // Top logo / category
+      const top = document.createElement("div");
+      top.className = "project-card-top";
+
+      const logoWrap = document.createElement("div");
+      logoWrap.className = "project-logo-wrap";
+      if (proj.logo) {
+        const img = document.createElement("img");
+        img.src = proj.logo;
+        img.alt = proj.client + " logo";
+        img.className = "project-logo-img";
+        logoWrap.appendChild(img);
+      } else {
+        const span = document.createElement("span");
+        span.style.fontFamily = "var(--font-mono)";
+        span.style.fontWeight = "700";
+        span.style.fontSize = "1.2rem";
+        span.style.color = "#FFFFFF";
+        span.textContent = proj.title;
+        logoWrap.appendChild(span);
       }
+
+      const tag = document.createElement("span");
+      tag.className = "project-tag";
+      tag.textContent = proj.category;
+      top.append(logoWrap, tag);
+
+      // Body info
+      const body = document.createElement("div");
+      const title = document.createElement("h3");
+      title.className = "project-title";
+      title.textContent = proj.title;
+
+      const summary = document.createElement("p");
+      summary.className = "project-summary";
+      summary.textContent = proj.description || proj.summary;
+
+      // Metrics
+      const metricsWrap = document.createElement("div");
+      metricsWrap.className = "project-metrics";
+      if (Array.isArray(proj.metrics)) {
+        proj.metrics.forEach(m => {
+          const pill = document.createElement("span");
+          pill.className = "metric-pill";
+          pill.textContent = "✦ " + m;
+          metricsWrap.appendChild(pill);
+        });
+      }
+
+      // Tech tags
+      const techWrap = document.createElement("div");
+      techWrap.className = "project-tech";
+      if (Array.isArray(proj.tech)) {
+        proj.tech.forEach(t => {
+          const tSpan = document.createElement("span");
+          tSpan.className = "tech-tag";
+          tSpan.textContent = t;
+          techWrap.appendChild(tSpan);
+        });
+      }
+
+      body.append(title, summary, metricsWrap, techWrap);
+
+      // Footer links
+      const foot = document.createElement("div");
+      foot.className = "project-footer";
+
+      const links = document.createElement("div");
+      links.className = "project-links";
+
+      if (proj.liveUrl) {
+        const live = document.createElement("a");
+        live.href = proj.liveUrl;
+        live.target = "_blank";
+        live.rel = "noopener noreferrer";
+        live.className = "link-out";
+        live.innerHTML = "Visit Live ↗";
+        links.appendChild(live);
+      }
+
+      if (proj.githubUrl) {
+        const repo = document.createElement("a");
+        repo.href = proj.githubUrl;
+        repo.target = "_blank";
+        repo.rel = "noopener noreferrer";
+        repo.className = "link-repo";
+        repo.innerHTML = "GitHub Code ↗";
+        links.appendChild(repo);
+      }
+
+      const clientLabel = document.createElement("span");
+      clientLabel.style.fontSize = "0.75rem";
+      clientLabel.style.color = "var(--text-dim)";
+      clientLabel.style.fontFamily = "var(--font-mono)";
+      clientLabel.textContent = proj.client;
+
+      foot.append(links, clientLabel);
+
+      card.append(top, body, foot);
+      container.appendChild(card);
+    });
+  }
+
+  // Render Services
+  function renderServices(services) {
+    const grid = document.getElementById("service-grid");
+    if (!grid || !Array.isArray(services)) return;
+
+    grid.replaceChildren();
+    services.forEach((s, idx) => {
       const card = document.createElement("article");
       card.className = "service-card";
-      const num = document.createElement("span");
-      num.className = "index";
-      num.textContent = String(index + 1).padStart(2, "0");
-      const heading = document.createElement("h3");
-      heading.textContent = service.title || "Service";
-      const summary = document.createElement("p");
-      summary.textContent = service.summary || "";
-      card.append(num, heading, summary);
+
+      const idxSpan = document.createElement("span");
+      idxSpan.className = "index";
+      idxSpan.textContent = "0" + (idx + 1) + " · CAPABILITY";
+
+      const title = document.createElement("h3");
+      title.textContent = s.title;
+
+      const p = document.createElement("p");
+      p.textContent = s.detail || s.summary;
+
+      card.append(idxSpan, title, p);
       grid.appendChild(card);
     });
   }
 
+  // Render Process Steps
   function renderSteps(steps) {
-    const list = document.getElementById("steps");
-    if (!list) return;
-    list.replaceChildren();
-    steps.forEach((step) => {
-      const item = document.createElement("li");
-      item.className = "step";
-      const strong = document.createElement("strong");
-      strong.textContent = step.title || "";
+    const grid = document.getElementById("steps-grid");
+    if (!grid || !Array.isArray(steps)) return;
+
+    grid.replaceChildren();
+    steps.forEach(step => {
+      const card = document.createElement("article");
+      card.className = "step-card";
+
+      const title = document.createElement("h3");
+      title.textContent = step.title;
+
       const p = document.createElement("p");
-      p.textContent = step.text || "";
-      item.append(strong, p);
-      list.appendChild(item);
+      p.textContent = step.text;
+
+      card.append(title, p);
+      grid.appendChild(card);
     });
   }
 
+  // Render Team
   function renderTeam(team) {
     const grid = document.getElementById("team-grid");
-    if (!grid) return;
+    if (!grid || !Array.isArray(team)) return;
+
     grid.replaceChildren();
-    team.forEach((person) => {
-      const article = document.createElement("article");
-      article.className = "person";
+    team.forEach(member => {
+      const card = document.createElement("article");
+      card.className = "team-card";
+
       const avatar = document.createElement("div");
-      avatar.className = "avatar";
-      avatar.setAttribute("aria-hidden", "true");
-      avatar.textContent = person.initials || String(person.name || "").slice(0, 2).toUpperCase();
-      const body = document.createElement("div");
-      const heading = document.createElement("h3");
-      heading.textContent = person.name || "";
+      avatar.className = "avatar-badge";
+      avatar.textContent = member.initials || "SV";
+
+      const info = document.createElement("div");
+      const name = document.createElement("h3");
+      name.textContent = member.name;
+
       const role = document.createElement("p");
       role.className = "role";
-      role.textContent = person.role || "";
+      role.textContent = member.role;
+
       const bio = document.createElement("p");
-      bio.textContent = person.bio || "";
-      body.append(heading, role, bio);
-      article.append(avatar, body);
-      grid.appendChild(article);
+      bio.className = "bio";
+      bio.textContent = member.bio;
+
+      info.append(name, role, bio);
+      card.append(avatar, info);
+      grid.appendChild(card);
     });
   }
 
-  function bindChrome() {
-    const header = document.getElementById("site-header");
-    if (header) {
-      const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 8);
-      onScroll();
-      window.addEventListener("scroll", onScroll, { passive: true });
-    }
+  // Setup Mobile Nav Toggle
+  function setupNav() {
     const menuBtn = document.getElementById("menu-btn");
     const nav = document.getElementById("nav");
     if (menuBtn && nav) {
       menuBtn.addEventListener("click", () => {
-        const open = nav.classList.toggle("open");
-        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
-        menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-      });
-      nav.querySelectorAll("a").forEach((link) => {
-        if (link.dataset.nav === page) link.setAttribute("aria-current", "page");
-        link.addEventListener("click", () => {
-          nav.classList.remove("open");
-          menuBtn.setAttribute("aria-expanded", "false");
-        });
+        const isOpen = nav.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
       });
     }
-    const year = document.getElementById("year");
-    if (year) year.textContent = String(new Date().getFullYear());
+
+    // Set active link
+    const page = document.body.dataset.page || "home";
+    const activeLink = document.querySelector(`.nav a[data-nav="${page}"]`);
+    if (activeLink) activeLink.classList.add("active");
   }
 
-  function bindForm() {
+  // Setup Contact Form
+  function setupContactForm() {
     const form = document.getElementById("contact-form");
-    const note = document.getElementById("form-note");
-    if (!form || !note) return;
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const data = new FormData(form);
-      const name = String(data.get("name") || "").trim();
-      const email = String(data.get("email") || "").trim();
-      const message = String(data.get("message") || "").trim();
-      if (!name || !email.includes("@") || message.length < 4) {
-        note.textContent = "Add your name, a real email, and a short message.";
-        note.className = "form-note error";
+    const statusBox = document.getElementById("form-status");
+    if (!form) return;
+
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const interest = formData.get("interest");
+      const message = formData.get("message");
+
+      if (!name || !email || !message) {
+        alert("Please complete all required fields.");
         return;
       }
-      const inbox = JSON.parse(localStorage.getItem("savi-inbox") || "[]");
-      inbox.unshift({
-        id: "inq-" + Date.now(),
-        name,
-        email,
-        interest: String(data.get("interest") || ""),
-        message,
-        createdAt: new Date().toISOString(),
-        status: "new"
-      });
-      localStorage.setItem("savi-inbox", JSON.stringify(inbox.slice(0, 200)));
+
+      // Store lead locally & show confirmation
+      try {
+        const leads = JSON.parse(localStorage.getItem("savi_inquiries") || "[]");
+        leads.push({ name, email, interest, message, date: new Date().toISOString() });
+        localStorage.setItem("savi_inquiries", JSON.stringify(leads));
+      } catch (err) {
+        console.warn("Storage unavailable", err);
+      }
+
+      // Open mailto fallback to guarantee founders get it immediately
+      const subject = encodeURIComponent(`[SaVi Tech Project Inquiry] - ${interest} from ${name}`);
+      const body = encodeURIComponent(`Hi Sahara & Vijay,\n\nName: ${name}\nEmail: ${email}\nLooking for: ${interest}\n\nProject Overview:\n${message}\n\nSent via savitech.studio`);
+      window.location.href = `mailto:kbskumar331@gmail.com,contact@savitech.studio?subject=${subject}&body=${body}`;
+
+      if (statusBox) {
+        statusBox.textContent = `Thank you, ${name}. Your project inquiry has been launched in your email client and saved. We'll reply within 24 hours.`;
+        statusBox.className = "form-status success";
+        statusBox.style.display = "block";
+      }
+
       form.reset();
-      note.className = "form-note";
-      note.textContent = "Received. This note is saved in the admin inbox on this browser.";
     });
   }
 
-  async function start() {
-    bindChrome();
-    bindForm();
+  // Init
+  async function init() {
+    setupNav();
+    setupContactForm();
+
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
     try {
-      const params = new URLSearchParams(location.search);
-      let content = null;
-      if (params.get("draft") === "1") {
-        const raw = localStorage.getItem("savi-draft");
-        if (raw) content = JSON.parse(raw);
-        const bar = document.createElement("div");
-        bar.className = "draft-bar";
-        bar.textContent = content ? "Draft preview. This is not published yet. " : "No draft in this browser. Showing the published site. ";
-        const back = document.createElement("a");
-        back.href = "admin.html";
-        back.textContent = "Back to admin";
-        bar.appendChild(back);
-        document.body.prepend(bar);
-      }
-      if (!content) {
-        const response = await fetch("content.json?ts=" + Date.now());
-        if (!response.ok) return;
-        content = await response.json();
-      }
-      window.__saviServices = content.services || [];
-      fillBrand(content.brand || {});
-      renderServices(content.services || [], page === "services" ? "full" : "cards");
-      renderSteps(content.steps || []);
-      renderTeam(content.team || []);
-      const interest = document.getElementById("interest-select");
-      if (interest) {
-        const current = interest.value;
-        interest.replaceChildren();
-        (content.services || []).forEach((service) => {
-          const option = document.createElement("option");
-          option.textContent = service.title;
-          interest.appendChild(option);
-        });
-        const other = document.createElement("option");
-        other.textContent = "Something else";
-        interest.appendChild(other);
-        if (current) interest.value = current;
+      const res = await fetch("content.json");
+      if (res.ok) {
+        const data = await res.json();
+        applyBrand(data.brand);
+        renderProjects(data.projects);
+        renderServices(data.services);
+        renderSteps(data.steps);
+        renderTeam(data.team);
       }
     } catch (err) {
-      /* Static fallback copy in the HTML still renders. */
+      console.warn("Failed to load content.json, relying on static markup", err);
     }
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", start);
+    document.addEventListener("DOMContentLoaded", init);
   } else {
-    start();
+    init();
   }
 })();
