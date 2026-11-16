@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaVi Tech — Color Palette Live Comparison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #050608;
+      color: #E0E0E0;
+      font-family: 'Outfit', sans-serif;
+      padding: 40px 20px 80px;
+    }
+    .header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #FFF;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+    .header p {
+      font-size: 1.05rem;
+      color: #888;
+      line-height: 1.6;
+    }
+    .palettes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .palette-box {
+      border-radius: 18px;
+      padding: 32px 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+    }
+    .tag-badge {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      align-self: flex-start;
+    }
+    .palette-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .swatches {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+    }
+    .swatch {
+      flex: 1;
+      height: 44px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 600;
+    }
+    
+    /* Mock UI Card */
+    .mock-ui {
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mock-headline {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+    .mock-headline em {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .mock-body {
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .mock-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      align-self: flex-start;
+      border: none;
+      cursor: pointer;
+    }
+    .mock-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .mock-pill {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* PALETTE A */
+    .p-a { background: #0D0F12; color: #F7F5F0; }
+    .p-a .tag-badge { background: rgba(229, 195, 158, 0.14); color: #E5C39E; border: 1px solid rgba(229, 195, 158, 0.3); }
+    .p-a .palette-title { color: #F7F5F0; }
+    .p-a .mock-ui { background: #16191E; border: 1px solid rgba(247, 245, 240, 0.1); }
+    .p-a .mock-headline { color: #F7F5F0; }
+    .p-a .mock-headline em { color: #E5C39E; }
+    .p-a .mock-body { color: #8E95A2; }
+    .p-a .mock-btn { background: #E5C39E; color: #0D0F12; }
+    .p-a .mock-pill { background: rgba(229, 195, 158, 0.12); color: #E5C39E; border: 1px solid rgba(229, 195, 158, 0.25); }
+
+    /* PALETTE B */
+    .p-b { background: #0A0A0A; color: #FFFFFF; }
+    .p-b .tag-badge { background: rgba(255, 90, 54, 0.15); color: #FF5A36; border: 1px solid rgba(255, 90, 54, 0.3); }
+    .p-b .palette-title { color: #FFFFFF; }
+    .p-b .mock-ui { background: #141414; border: 1px solid rgba(255, 255, 255, 0.1); }
+    .p-b .mock-headline { color: #FFFFFF; }
+    .p-b .mock-headline em { color: #FF5A36; }
+    .p-b .mock-body { color: #999999; }
+    .p-b .mock-btn { background: #FF5A36; color: #FFFFFF; }
+    .p-b .mock-pill { background: rgba(255, 90, 54, 0.12); color: #FF5A36; border: 1px solid rgba(255, 90, 54, 0.25); }
+
+    /* PALETTE C */
+    .p-c { background: #121110; color: #F5EFEB; }
+    .p-c .tag-badge { background: rgba(217, 119, 70, 0.15); color: #D97746; border: 1px solid rgba(217, 119, 70, 0.3); }
+    .p-c .palette-title { color: #F5EFEB; }
+    .p-c .mock-ui { background: #1C1A18; border: 1px solid rgba(245, 239, 235, 0.1); }
+    .p-c .mock-headline { color: #F5EFEB; }
+    .p-c .mock-headline em { color: #D97746; }
+    .p-c .mock-body { color: #A8A096; }
+    .p-c .mock-btn { background: #D97746; color: #F5EFEB; }
+    .p-c .mock-pill { background: rgba(217, 119, 70, 0.12); color: #D97746; border: 1px solid rgba(217, 119, 70, 0.25); }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>SaVi Tech — Color Palette Exploration</h1>
+    <p>Compare the 3 bespoke design directions side-by-side. Notice how none of them use generic "AI teal/cyan" — they use tactile, prestigious tones suited for high-value business clients.</p>
+  </div>
+
+  <div class="palettes-grid">
+
+    <!-- PALETTE A -->
+    <div class="palette-box p-a">
+      <span class="tag-badge">Palette A · Quiet Luxury</span>
+      <h2 class="palette-title">Obsidian & Titanium Gold</h2>
+      <p style="font-size:0.86rem; color:#8E95A2; line-height:1.5;">Inspired by <em>Seed Jewelry</em> & <em>Two Halves</em>. Architectural charcoal with warm champagne titanium. Elite, bespoke, authoritative.</p>
+      
+      <div class="swatches">
+        <div class="swatch" style="background:#0D0F12; color:#8E95A2;">#0D0F12</div>
+        <div class="swatch" style="background:#16191E; color:#8E95A2;">#16191E</div>
+        <div class="swatch" style="background:#F7F5F0; color:#0D0F12;">#F7F5F0</div>
+        <div class="swatch" style="background:#E5C39E; color:#0D0F12;">#E5C39E</div>
+      </div>
+
+      <div class="mock-ui">
+        <div class="mock-headline">We build digital flagships that look <em>established</em>.</div>
+        <p class="mock-body">Bespoke websites, online storefronts, and WhatsApp automations crafted directly by senior practitioners.</p>
+        <div class="mock-pills">
+          <span class="mock-pill">✦ Sub-second load</span>
+          <span class="mock-pill">✦ Custom E-Commerce</span>
+        </div>
+        <button class="mock-btn">Let's Talk →</button>
+      </div>
+    </div>
+
+    <!-- PALETTE B -->
+    <div class="palette-box p-b">
+      <span class="tag-badge">Palette B · High Performance</span>
+      <h2 class="palette-title">Matte Black & Vermillion</h2>
+      <p style="font-size:0.86rem; color:#999; line-height:1.5;">Inspired by <em>Spyker Cars</em>. Deepest matte black with crisp white and punchy burnt vermillion. High-velocity, bold, zero gimmicks.</p>
+      
+      <div class="swatches">
+        <div class="swatch" style="background:#0A0A0A; color:#888;">#0A0A0A</div>
+        <div class="swatch" style="background:#141414; color:#888;">#141414</div>
+        <div class="swatch" style="background:#FFFFFF; color:#0A0A0A;">#FFFFFF</div>
+        <div class="swatch" style="background:#FF5A36; color:#FFFFFF;">#FF5A36</div>
+      </div>
+
+      <div class="mock-ui">
+        <div class="mock-headline">We engineer digital flagships that <em>actually work</em>.</div>
+        <p class="mock-body">Bespoke websites, online storefronts, and WhatsApp automations crafted directly by senior practitioners.</p>
+        <div class="mock-pills">
+          <span class="mock-pill">✦ Sub-second load</span>
+          <span class="mock-pill">✦ Custom E-Commerce</span>
+        </div>
+        <button class="mock-btn">Let's Talk →</button>
+      </div>
+    </div>
+
+    <!-- PALETTE C -->
+    <div class="palette-box p-c">
+      <span class="tag-badge">Palette C · Modern Artisan</span>
+      <h2 class="palette-title">Espresso & Warm Terracotta</h2>
+      <p style="font-size:0.86rem; color:#A8A096; line-height:1.5;">Inspired by high-end Scandinavian lifestyle brands. Warm organic espresso noir with cream text and handcrafted terracotta.</p>
+      
+      <div class="swatches">
+        <div class="swatch" style="background:#121110; color:#A8A096;">#121110</div>
+        <div class="swatch" style="background:#1C1A18; color:#A8A096;">#1C1A18</div>
+        <div class="swatch" style="background:#F5EFEB; color:#121110;">#F5EFEB</div>
+        <div class="swatch" style="background:#D97746; color:#F5EFEB;">#D97746</div>
+      </div>
+
+      <div class="mock-ui">
+        <div class="mock-headline">Bespoke digital design for <em>modern brands</em>.</div>
+        <p class="mock-body">Bespoke websites, online storefronts, and WhatsApp automations crafted directly by senior practitioners.</p>
+        <div class="mock-pills">
+          <span class="mock-pill">✦ Sub-second load</span>
+          <span class="mock-pill">✦ Custom E-Commerce</span>
+        </div>
+        <button class="mock-btn">Let's Talk →</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
