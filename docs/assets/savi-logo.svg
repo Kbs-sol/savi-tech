@@ -1,20 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 56" fill="none">
-  <defs>
-    <linearGradient id="underbar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#3EE0FF"/>
-      <stop offset="100%" stop-color="#3EE0FF" stop-opacity="0.2"/>
-    </linearGradient>
-    <filter id="glow" x="-20%" y="-80%" width="140%" height="260%">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <!-- Sa (white) -->
-  <text x="4" y="38" font-family="'Outfit',system-ui,sans-serif" font-size="40" font-weight="800" letter-spacing="-2.5" fill="#F4F7FB">Sa</text>
-  <!-- Vi (cyan) with subtle glow -->
-  <text x="68" y="38" font-family="'Outfit',system-ui,sans-serif" font-size="40" font-weight="800" letter-spacing="-2.5" fill="#3EE0FF" filter="url(#glow)">Vi</text>
-  <!-- Hairline underbar -->
-  <rect x="4" y="44" width="140" height="2" rx="1" fill="url(#underbar)"/>
-  <!-- TECH. subtext -->
-  <text x="4" y="55" font-family="'IBM Plex Mono',ui-monospace,monospace" font-size="9" font-weight="500" letter-spacing="4" fill="#9AABC2">TECH.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
+  <!-- Interactive Brand Logo Lockup: SaVi Wordmark + The 3 Pillars Pulse Bar + Tagline -->
+  <g id="brand-mark">
+    <!-- Sa (Design & Creative Foundation) -->
+    <text x="0" y="38" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5" fill="#111111">Sa</text>
+    
+    <!-- Vi (Engineering & Systems Vertex) with Warm Amber Dot -->
+    <text x="48" y="38" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5" fill="#111111">Vi</text>
+    <circle cx="82" cy="18" r="4" fill="#E8590C"/>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="98" y1="12" x2="98" y2="44" stroke="#E6E4DF" stroke-width="1.5"/>
+
+  <!-- Tagline Pillars: DESIGN . DEVELOP . DELIVER -->
+  <g transform="translate(112, 16)">
+    <text x="0" y="12" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="2" fill="#E8590C">DESIGN. DEVELOP. DELIVER.</text>
+    <text x="0" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" color="#7E7E7E" fill="#7E7E7E">Simple · Effective · Efficient</text>
+  </g>
 </svg>

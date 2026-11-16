@@ -1,18 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <!-- Background -->
-  <rect width="64" height="64" rx="14" fill="#07111F"/>
-  <!-- Cyan glow border -->
-  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="rgba(62,224,255,0.45)" stroke-width="1.5"/>
-  <!-- S glyph -->
-  <text x="7" y="43" font-family="'Outfit',system-ui,sans-serif" font-size="30" font-weight="800" letter-spacing="-2" fill="#F4F7FB">Sa</text>
-  <!-- Vi in cyan -->
-  <text x="34" y="43" font-family="'Outfit',system-ui,sans-serif" font-size="30" font-weight="800" letter-spacing="-2" fill="#3EE0FF">Vi</text>
-  <!-- Underline bar — cyan, tapers right -->
-  <defs>
-    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#3EE0FF" stop-opacity="1"/>
-      <stop offset="100%" stop-color="#3EE0FF" stop-opacity="0.3"/>
-    </linearGradient>
-  </defs>
-  <rect x="8" y="49" width="48" height="2" rx="1" fill="url(#bar)"/>
+  <!-- Minimalist Clean Favicon -->
+  <rect width="64" height="64" rx="14" fill="#111111"/>
+  <text x="7" y="43" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="800" letter-spacing="-1.5" fill="#FAFAF7">Sa</text>
+  <text x="36" y="43" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="28" font-weight="800" letter-spacing="-1.5" fill="#FAFAF7">Vi</text>
+  <circle cx="56" cy="24" r="3.5" fill="#E8590C"/>
 </svg>
