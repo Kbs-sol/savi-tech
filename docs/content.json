@@ -7,19 +7,19 @@
     "heroLede": "From brand launches to online stores to WhatsApp automations — SaVi Tech handles the digital side so you can focus on the business.",
     "cardLine": "Boutique Digital Studio",
     "cardServices": "Websites  ·  Online Stores  ·  Automations",
-    "bandText": "We work directly with founders and business owners. No account managers, no outsourced teams — just senior design and engineering focused entirely on your project.",
-    "aboutTitle": "Built by founders, for founders.",
+    "bandText": "We partner with ambitious founders and business owners to build high-performance storefronts, digital platforms, and automated operations. Transparent communication. Zero agency overhead.",
+    "aboutTitle": "Practical digital engineering. Clear accountability.",
     "aboutParagraphs": [
-      "SaVi Technologies was started on a simple idea: great digital products come from close, hands-on teams — not layers of agencies and middle managers.",
-      "The name says it all. Sa is Sahera Banu, who leads design, brand strategy, and creative direction. Vi is Vijay Prasad, who leads engineering, product systems, and technical delivery. Together, we are SaVi Tech.",
-      "We build bespoke websites, online stores, and business automations that look great, work reliably, and genuinely help you grow."
+      "SaVi Technologies was established with a clear commercial focus: engineering web flagships, e-commerce stores, and digital automations that solve real operational bottlenecks.",
+      "The studio was co-founded by Sahera Banu (Creative Direction & Brand Strategy) and Vijay Prasad (Product Engineering & Systems Architecture). Together with our engineering and automation associates, we build resilient, high-speed digital infrastructure for growing brands.",
+      "We design and build bespoke web flagships, online stores, and automated business workflows that look established, run smoothly, and genuinely support business growth."
     ],
-    "aboutNote": "Every project is handled directly by Sahera and Vijay — from first call to final launch.",
+    "aboutNote": "Direct leadership accountability, senior craft, and transparent milestones on every engagement.",
     "servicesTitle": "What We Build",
     "servicesIntro": "Clear services. No jargon. Real results for real businesses.",
     "approachTitle": "DESIGN. DEVELOP. DELIVER.",
-    "teamTitle": "Who You Work With",
-    "teamIntro": "When you work with SaVi Tech, you talk directly to the people who design and build your product. Always.",
+    "teamTitle": "Studio Leadership",
+    "teamIntro": "SaVi Tech is led by multidisciplinary practitioners combining creative direction with systems engineering.",
     "contactTitle": "Let's build something real.",
     "contactIntro": "Tell us what you're working on. Whether it's a new website, an online store, or automating your business — we'll reply with an honest plan within 24 hours.",
     "email": "contact@savitech.studio",
@@ -190,17 +190,17 @@
     {
       "id": "sahera-banu",
       "name": "Sahera Banu",
-      "role": "Founder · Design & Creative Direction",
-      "discipline": "Brand · Visual Identity · UX Strategy",
-      "bio": "Sahera leads all design work at SaVi Tech — from brand identity and typography to the full visual experience of every website and product we build.",
+      "role": "Founder · Design & Creative Strategy",
+      "discipline": "Brand Identity · Art Direction · UX Architecture",
+      "bio": "Directs visual hierarchy, typographic discipline, brand positioning, and overall aesthetic vision across studio client engagements.",
       "initials": "SB"
     },
     {
       "id": "vijay-prasad",
       "name": "Vijay Prasad",
-      "role": "Co-founder · Engineering & Product",
-      "discipline": "Web Engineering · Systems · Automation",
-      "bio": "Vijay handles all technical delivery — from front-end architecture and performance to backend systems, automations, and cloud infrastructure.",
+      "role": "Co-founder · Engineering & Systems Architecture",
+      "discipline": "Full-Stack Platforms · Automations · Cloud Infrastructure",
+      "bio": "Leads technical architecture, performance engineering, automated logistics integrations, and resilient cloud deployments.",
       "initials": "VP"
     }
   ]
