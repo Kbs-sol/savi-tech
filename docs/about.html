@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — SaVi Tech · Sahera Banu & Vijay Prasad</title>
-  <meta name="description" content="SaVi Tech was founded by Sahera Banu (Design) and Vijay Prasad (Engineering). Learn how the studio works and why direct founder collaboration makes the difference.">
-  <meta name="theme-color" content="#07111F">
+  <title>About — SaVi Tech · DESIGN. DEVELOP. DELIVER.</title>
+  <meta name="description" content="Learn about SaVi Tech. Rooted in the Sanskrit etymology of Savi — to animate and set into motion. We design, develop, and deliver high-performance digital products.">
+  <meta name="theme-color" content="#FAFAF7">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="about">
@@ -18,17 +18,19 @@
   <header class="site-header" id="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="SaVi Tech Home">
-        <img src="assets/savi-logo.svg" alt="SaVi Tech wordmark" class="brand-logo-img">
+        <div class="brand-interactive-logo">
+          <img src="assets/savi-logo.svg" alt="SaVi Tech · DESIGN. DEVELOP. DELIVER." style="height:38px; width:auto;">
+        </div>
       </a>
       <nav class="nav" id="nav" aria-label="Main Navigation">
-        <a href="index.html" data-nav="home">Home</a>
-        <a href="work.html" data-nav="work">Our Work</a>
-        <a href="services.html" data-nav="services">Services</a>
-        <a href="about.html" data-nav="about">About</a>
-        <a href="contact.html" data-nav="contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="services.html">Services</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <div style="display:flex; align-items:center; gap:10px;">
-        <a class="btn btn-cyan btn-sm header-cta" href="contact.html">Start a Project</a>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <a class="btn btn-solid btn-sm header-cta" href="contact.html">Start a Project</a>
         <button class="menu-btn" id="menu-btn" type="button" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -39,81 +41,83 @@
   <main id="main">
     <section class="page-hero">
       <div class="wrap">
-        <p class="eyebrow">Our Story</p>
-        <h1 id="about-title">Built by founders, for founders.</h1>
-        <p class="lede">We started SaVi Tech because we believed great digital products should come from people who actually care — not from agency layers and account managers.</p>
+        <div class="hero-tagline-badge">The Studio DNA</div>
+        <h1 id="about-title">Simple. Effective. Efficient.</h1>
+        <p class="lede">A specialized digital engineering and product atelier built for founders who value clear results, fast communication, and zero corporate bureaucracy.</p>
       </div>
     </section>
 
-    <!-- About story + brand aside -->
+    <!-- Meaning & Origin section -->
     <section class="section">
       <div class="wrap split">
         <div class="reveal">
-          <div id="about-body" style="font-size:1.08rem; line-height:1.75; color:var(--text);">
-            <p style="margin-bottom:22px;">SaVi Tech was founded on a straightforward principle: great digital products come from focused, agile teams with deep domain craft — not layers of bloated agency management.</p>
-            <p style="margin-bottom:22px;">The studio's name reflects its foundational duality: <strong style="color:var(--paper);">Sa</strong>hera Banu directs creative vision, brand identity, and user experience. <strong style="color:var(--paper);">Vijay</strong> Prasad leads software architecture, systems engineering, and backend automations. Together, they guide SaVi Tech as a boutique digital atelier.</p>
-            <p style="margin-bottom:0;">Supported by focused engineering and design specialists, we build bespoke websites, high-conversion online stores, and reliable business automations engineered to help modern brands grow.</p>
+          <div id="about-body" style="font-size:1.08rem; line-height:1.8; color:var(--ink-secondary);">
+            <p style="margin-bottom:22px;">SaVi Tech was built on a clean proposition: digital products should be designed with authority, developed with resilient code, and delivered to market without the bloat of traditional agencies.</p>
+            <p style="margin-bottom:22px;">The studio's name is rooted in the Sanskrit etymological root of <strong>Savi (सवितृ / सवि)</strong> — meaning <em>"to animate, to clarify, and to set into motion."</em> That ancient purpose defines our everyday execution: taking static ideas or offline operations and setting them into live, automated commercial motion.</p>
+            <p style="margin-bottom:0;">Supported by our multidisciplinary engineering associates, we partner with independent founders and consumer brands across India and worldwide.</p>
           </div>
 
-          <p style="margin-top:28px; padding:20px 24px; background:var(--card); border-left:3px solid var(--accent); border-radius:0 var(--radius-sm) var(--radius-sm) 0; font-size:0.95rem; color:var(--muted); line-height:1.65;" id="about-note">
-            Founder-led creative direction and technical architecture on every studio engagement.
-          </p>
+          <div style="margin-top:32px; padding:24px 28px; background:var(--card-bg); border-left:3px solid var(--accent); border-radius:0 var(--radius-sm) var(--radius-sm) 0; border:1px solid var(--border); border-left-width:3px;">
+            <p style="font-size:0.95rem; color:var(--ink-secondary); line-height:1.65; margin:0;" id="about-note">
+              Every project is led with direct partner accountability — from initial architectural blueprint to production launch.
+            </p>
+          </div>
         </div>
 
-        <!-- Brand mark aside -->
-        <div class="brand-aside reveal">
-          <p class="eyebrow" style="margin-bottom:16px;">The Origin</p>
-          <div class="brand-aside-logo">
-            <img src="assets/savi-logo.svg" alt="SaVi Tech wordmark">
-          </div>
-          <h3 style="font-size:1.2rem; color:var(--paper); margin-bottom:10px; letter-spacing:-0.01em;">The Duality of SaVi</h3>
-          <p style="color:var(--muted); font-size:0.92rem; line-height:1.65; margin-bottom:20px;">
-            A synthesis of design strategy (Sahera) and engineering precision (Vijay). Rooted in the Sanskrit etymology of <em>Savi</em>: to animate, clarify, and set digital products into reliable motion.
-          </p>
-          <div style="padding-top:16px; border-top:1px solid var(--line);">
-            <p style="font-family:var(--mono); font-size:0.68rem; color:var(--accent); letter-spacing:0.18em; text-transform:uppercase;">DESIGN. DEVELOP. DELIVER.</p>
+        <!-- Tagline Card -->
+        <div class="brand-aside reveal" style="background:#FFFFFF; border:1px solid var(--border); border-radius:var(--radius); padding:36px;">
+          <span class="eyebrow" style="color:var(--accent); font-family:var(--mono); font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:12px; display:block;">Our Triad Commitment</span>
+          <h3 style="font-size:1.6rem; color:var(--ink); margin-bottom:16px; font-weight:800; letter-spacing:-0.02em;">DESIGN.<br>DEVELOP.<br>DELIVER.</h3>
+          
+          <div style="display:flex; flex-direction:column; gap:16px; margin-top:20px;">
+            <div style="padding-bottom:14px; border-bottom:1px solid var(--border);">
+              <strong style="color:var(--ink); display:block; font-size:0.95rem; margin-bottom:2px;">1. DESIGN</strong>
+              <p style="font-size:0.88rem; color:var(--ink-secondary); margin:0;">Visual authority, high polish, and mathematical typographic discipline that inspires immediate client trust.</p>
+            </div>
+            <div style="padding-bottom:14px; border-bottom:1px solid var(--border);">
+              <strong style="color:var(--ink); display:block; font-size:0.95rem; margin-bottom:2px;">2. DEVELOP</strong>
+              <p style="font-size:0.88rem; color:var(--ink-secondary); margin:0;">Resilient full-stack engineering, sub-second page performance, and clean maintainable code.</p>
+            </div>
+            <div>
+              <strong style="color:var(--ink); display:block; font-size:0.95rem; margin-bottom:2px;">3. DELIVER</strong>
+              <p style="font-size:0.88rem; color:var(--ink-secondary); margin:0;">Automated logistics, WhatsApp business workflows, and payment integrations running 24/7 in production.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Team -->
-    <section class="section section-alt">
+    <!-- Leadership Section -->
+    <section class="section" style="border-top:1px solid var(--border); background:var(--bg-subtle);">
       <div class="wrap">
         <header class="section-head reveal">
-          <p class="eyebrow">Studio Leadership</p>
-          <h2 id="team-title">Practice Leads</h2>
-          <p class="section-intro" id="team-intro">SaVi Tech is led by multidisciplinary practitioners who guide design and systems architecture across all client builds.</p>
+          <span class="eyebrow">Studio Practice Leads</span>
+          <h2 id="team-title">Multidisciplinary Direction</h2>
+          <p class="section-intro" id="team-intro">SaVi Tech is directed by focused practitioners who lead design and technical systems architecture across all client builds.</p>
         </header>
 
-        <div class="team-grid reveal-stagger" id="team-grid">
+        <div class="team-grid reveal" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
 
-          <article class="team-card">
-            <div class="founder-mark">
-              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <text x="4" y="24" font-family="'Outfit',system-ui,sans-serif" font-size="22" font-weight="800" fill="#E8590C">S</text>
-              </svg>
-            </div>
+          <article class="team-card" style="background:#FFFFFF; border:1px solid var(--border); border-radius:var(--radius); padding:36px; display:flex; flex-direction:column; gap:16px;">
             <div>
-              <h3>Sahera Banu</h3>
-              <p class="role">Founder · Design &amp; Creative Strategy</p>
-              <p class="discipline">Creative Direction · Visual Identity · UX</p>
-              <p class="bio">Sahera directs brand identity, visual hierarchy, typography, and creative strategy across studio engagements, ensuring every flagship communicates high aesthetic authority.</p>
+              <span style="font-family:var(--mono); font-size:0.75rem; color:var(--accent); text-transform:uppercase; font-weight:600; letter-spacing:0.1em; display:block; margin-bottom:4px;">Creative Direction</span>
+              <h3 style="font-size:1.4rem; color:var(--ink); font-weight:700;">Sahera Banu</h3>
+              <p style="font-family:var(--mono); font-size:0.8rem; color:var(--ink-muted); margin-top:2px;">Founder · Design &amp; Creative Strategy</p>
             </div>
+            <p style="font-size:0.95rem; color:var(--ink-secondary); line-height:1.65; margin:0;">
+              Sahera directs brand identity, visual hierarchy, typography systems, and overall aesthetic vision across studio client engagements, ensuring every platform conveys high aesthetic authority.
+            </p>
           </article>
 
-          <article class="team-card">
-            <div class="founder-mark">
-              <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <text x="3" y="24" font-family="'Outfit',system-ui,sans-serif" font-size="22" font-weight="800" fill="#E8590C">V</text>
-              </svg>
-            </div>
+          <article class="team-card" style="background:#FFFFFF; border:1px solid var(--border); border-radius:var(--radius); padding:36px; display:flex; flex-direction:column; gap:16px;">
             <div>
-              <h3>Vijay Prasad</h3>
-              <p class="role">Co-founder · Engineering &amp; Systems Architecture</p>
-              <p class="discipline">Software Engineering · Backend Systems · Automations</p>
-              <p class="bio">Vijay leads engineering systems, backend architectures, logistics integrations, and automated cloud workflows, ensuring every platform is resilient, fast, and scalable.</p>
+              <span style="font-family:var(--mono); font-size:0.75rem; color:var(--accent); text-transform:uppercase; font-weight:600; letter-spacing:0.1em; display:block; margin-bottom:4px;">Systems Architecture</span>
+              <h3 style="font-size:1.4rem; color:var(--ink); font-weight:700;">Vijay Prasad</h3>
+              <p style="font-family:var(--mono); font-size:0.8rem; color:var(--ink-muted); margin-top:2px;">Co-founder · Engineering &amp; Systems Architecture</p>
             </div>
+            <p style="font-size:0.95rem; color:var(--ink-secondary); line-height:1.65; margin:0;">
+              Vijay leads software architecture, front-end speed optimization, backend integrations (Shiprocket &amp; payment gateways), and automated WhatsApp systems to ensure reliable production uptime.
+            </p>
           </article>
 
         </div>
@@ -121,16 +125,16 @@
     </section>
 
     <!-- Simple CTA -->
-    <section class="section">
+    <section class="section" style="border-top:1px solid var(--border);">
       <div class="wrap" style="text-align:center;">
         <div class="reveal">
-          <p class="eyebrow" style="justify-content:center;">Ready to work together?</p>
-          <h2 style="font-size:clamp(1.8rem,3vw,2.6rem); font-weight:700; letter-spacing:-0.03em; color:var(--paper); margin-bottom:16px; line-height:1.2;">Let's build something real.</h2>
-          <p style="color:var(--muted); font-size:1.05rem; max-width:520px; margin:0 auto 32px; line-height:1.6;">A quick message is enough to get started. We'll reply within 24 hours.</p>
+          <span class="eyebrow" style="color:var(--accent); font-family:var(--mono); font-size:0.76rem; letter-spacing:0.16em; text-transform:uppercase; margin-bottom:12px; display:block;">Ready to work together?</span>
+          <h2 style="font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; letter-spacing:-0.03em; color:var(--ink); margin-bottom:16px; line-height:1.2;">Let's build something real.</h2>
+          <p style="color:var(--ink-secondary); font-size:1.05rem; max-width:520px; margin:0 auto 32px; line-height:1.6;">A quick note is enough to get started. We'll reply within 24 hours.</p>
           <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-            <a class="btn btn-cyan" href="contact.html">Send a Message →</a>
-            <a class="btn btn-whatsapp" href="https://wa.me/918333066370" target="_blank" rel="noopener">
-              <span>💬</span> WhatsApp Us
+            <a class="btn btn-solid" href="contact.html">Send a Project Note →</a>
+            <a class="btn btn-outline" href="https://wa.me/918333066370" target="_blank" rel="noopener">
+              WhatsApp: +91 83330 66370
             </a>
           </div>
         </div>
@@ -140,12 +144,9 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <div class="footer-brand">
-        <img src="assets/savi-logo.svg" alt="SaVi Tech">
-        <div>
-          <span class="footer-brand-name">SaVi Tech.</span>
-          <span class="footer-tagline">DESIGN. DEVELOP. DELIVER.</span>
-        </div>
+      <div>
+        <div class="footer-brand-title">SaVi Tech.</div>
+        <div class="footer-tagline">DESIGN. DEVELOP. DELIVER.</div>
       </div>
       <nav class="footer-nav" aria-label="Footer Navigation">
         <a href="index.html">Home</a>
@@ -154,7 +155,7 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <p class="footer-copy">© <span id="year">2026</span> <span id="footer-legal-name">SaVi Technologies</span>. All rights reserved.</p>
+      <p class="footer-copy">© 2026 SaVi Technologies · Hyderabad · Worldwide Remote</p>
     </div>
   </footer>
 
