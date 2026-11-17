@@ -20,9 +20,27 @@
   <header class="site-header" id="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="SaVi Tech Home">
-        <div class="brand-interactive-logo" id="header-brand-logo">
-          <img src="assets/savi-logo.svg" alt="SaVi Tech · DESIGN. DEVELOP. DELIVER." style="height:40px; width:auto;">
-        </div>
+        <svg class="savi-interactive-brand" viewBox="0 0 340 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="saviAmberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF6B00"/>
+              <stop offset="100%" stop-color="#E8590C"/>
+            </linearGradient>
+          </defs>
+          <g class="savi-glyph-group">
+            <path class="glyph-s" d="M 12 40 C 12 43, 24 45, 34 45 C 48 45, 54 39, 54 32 C 54 22, 22 23, 22 13 C 22 7, 30 5, 42 5 C 50 5, 58 7, 62 10" stroke="#111111" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path class="glyph-a" d="M 84 45 C 72 45, 66 35, 66 26 C 66 17, 73 8, 85 8 C 96 8, 102 16, 102 26 L 102 45 M 102 24 C 95 18, 75 18, 75 27 C 75 35, 87 35, 102 32" stroke="#111111" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path class="glyph-v" d="M 116 8 L 138 45 L 162 8" stroke="#111111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path class="glyph-impeller" d="M 102 42 C 114 42, 126 30, 138 45 C 150 30, 164 42, 184 42" stroke="url(#saviAmberGrad)" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+            <line class="glyph-i-stem" x1="184" y1="18" x2="184" y2="45" stroke="#111111" stroke-width="6.5" stroke-linecap="round"/>
+            <circle class="glyph-i-tittle" cx="184" cy="7" r="4.5" fill="url(#saviAmberGrad)"/>
+          </g>
+          <line x1="208" y1="12" x2="208" y2="48" stroke="#E6E4DF" stroke-width="1.5"/>
+          <g class="savi-subtext" transform="translate(222, 18)">
+            <text x="0" y="11" font-family="'IBM Plex Mono', monospace" font-size="9" font-weight="600" letter-spacing="2.2" fill="#E8590C">DESIGN. DEVELOP. DELIVER.</text>
+            <text x="0" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="500" fill="#7E7E7E">Boutique Digital Studio</text>
+          </g>
+        </svg>
       </a>
 
       <nav class="nav" id="nav" aria-label="Main Navigation">
@@ -72,80 +90,8 @@
       </div>
     </section>
 
-    <!-- ── INTERACTIVE LOGO LAB: VISUALIZING THE STUDIO VISION ── -->
-    <section class="logo-lab-section reveal">
-      <div class="wrap">
-        <div class="section-head" style="margin-bottom:28px;">
-          <span class="eyebrow">Intentional Brand Architecture</span>
-          <h2 style="font-size:1.8rem;">Interactive Logo Lab: 3 Purpose-Driven Forms</h2>
-          <p class="section-intro">
-            Click any concept below to switch the website header logo in real time. Each design directly visualizes the studio's ethos and the Sanskrit root of <strong>SaVi</strong> (<em>"to set into motion"</em>).
-          </p>
-        </div>
-
-        <div class="logo-lab-grid">
-          
-          <!-- CONCEPT 1: The Triple Pillar Horizon -->
-          <div class="logo-lab-card active-choice reveal" id="card-choice-1" onclick="switchStudioLogo(1)">
-            <span class="logo-lab-badge">Option 01 · Active</span>
-            <div class="logo-display-box">
-              <svg viewBox="0 0 200 48" fill="none" style="height:36px;" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="30" font-weight="800" letter-spacing="-1.2" fill="#111111">SaVi</text>
-                <circle cx="68" cy="15" r="3.5" fill="#E8590C"/>
-                <!-- 3 Pillars representing Design, Develop, Deliver -->
-                <rect x="88" y="16" width="3" height="16" rx="1.5" fill="#E8590C"/>
-                <rect x="96" y="10" width="3" height="22" rx="1.5" fill="#111111"/>
-                <rect x="104" y="6" width="3" height="26" rx="1.5" fill="#111111"/>
-              </svg>
-            </div>
-            <div class="logo-concept-info">
-              <strong>The 3 Pillars of Delivery</strong>
-              <p>Visualizes the 3 execution phases: <em>Design</em> (foundation), <em>Develop</em> (structure), and <em>Deliver</em> (launch). Grounded, structural, and architectonic.</p>
-            </div>
-          </div>
-
-          <!-- CONCEPT 2: The Kinetic Impeller (Sanskrit Root: To Set in Motion) -->
-          <div class="logo-lab-card reveal" id="card-choice-2" onclick="switchStudioLogo(2)">
-            <span class="logo-lab-badge">Option 02</span>
-            <div class="logo-display-box">
-              <svg viewBox="0 0 200 48" fill="none" style="height:36px;" xmlns="http://www.w3.org/2000/svg">
-                <!-- S and V converging into forward dynamic motion -->
-                <path d="M 12 12 C 12 6, 28 6, 28 14 C 28 22, 12 24, 12 32 C 12 40, 28 40, 28 32" stroke="#111111" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-                <path d="M 36 8 L 48 40 L 60 8" stroke="#111111" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <!-- Forward Delivery Chevron in Amber -->
-                <path d="M 66 18 L 74 24 L 66 30" stroke="#E8590C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                <text x="86" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" letter-spacing="1.5" fill="#111111">TECH</text>
-              </svg>
-            </div>
-            <div class="logo-concept-info">
-              <strong>The Kinetic Forward Chevron</strong>
-              <p>Directly expresses the Sanskrit root of <em>SaVi</em> (<em>Savitṛ</em>: "the impeller" / setting business into motion) through a precision forward-motion glyph.</p>
-            </div>
-          </div>
-
-          <!-- CONCEPT 3: The Connected Cycle (End-to-End Handover) -->
-          <div class="logo-lab-card reveal" id="card-choice-3" onclick="switchStudioLogo(3)">
-            <span class="logo-lab-badge">Option 03</span>
-            <div class="logo-display-box">
-              <svg viewBox="0 0 200 48" fill="none" style="height:36px;" xmlns="http://www.w3.org/2000/svg">
-                <text x="4" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="30" font-weight="800" letter-spacing="-1.2" fill="#111111">SaVi</text>
-                <!-- Subtle unbroken continuity loop indicating direct founders to client delivery -->
-                <path d="M 74 30 C 88 30, 96 14, 110 14 C 122 14, 128 22, 128 30" stroke="#E8590C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-                <circle cx="128" cy="30" r="3" fill="#111111"/>
-              </svg>
-            </div>
-            <div class="logo-concept-info">
-              <strong>The Continuous Handover Loop</strong>
-              <p>Visualizes the fluid collaboration between design vision and technical engineering, delivering production-ready platforms with zero agency friction.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── SELECTED CLIENT WORK ── -->
-    <section class="section" id="work">
+      <!-- ── SELECTED CLIENT WORK ── -->
+      <section class="section" id="work" style="border-top:1px solid var(--border);">
       <div class="wrap">
         <header class="section-head reveal">
           <span class="eyebrow">Proven Client Delivery</span>
@@ -168,6 +114,12 @@
                 <span class="metric-pill">✦ Sub-800ms load</span>
                 <span class="metric-pill">✦ 42% mobile conversion lift</span>
               </div>
+              <div class="project-tech-stack">
+                <span class="tech-badge accent">E-Commerce</span>
+                <span class="tech-badge">Custom Jamstack</span>
+                <span class="tech-badge">Razorpay UPI</span>
+                <span class="tech-badge">Edge CDN</span>
+              </div>
             </div>
             <div class="project-footer">
               <a href="https://intru.in" target="_blank" rel="noopener noreferrer">Visit Live Flagship ↗</a>
@@ -187,6 +139,12 @@
               <div class="project-metrics">
                 <span class="metric-pill">✦ Auto Shiprocket sync</span>
                 <span class="metric-pill">✦ ISO &amp; GMP certified</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-badge accent">D2C Architecture</span>
+                <span class="tech-badge">Shiprocket API</span>
+                <span class="tech-badge">Diagnosis Logic</span>
+                <span class="tech-badge">Payment Gateway</span>
               </div>
             </div>
             <div class="project-footer">
@@ -208,6 +166,12 @@
                 <span class="metric-pill">✦ Live wall simulation</span>
                 <span class="metric-pill">✦ Instant dimension math</span>
               </div>
+              <div class="project-tech-stack">
+                <span class="tech-badge accent">Interactive Visualizer</span>
+                <span class="tech-badge">Canvas API</span>
+                <span class="tech-badge">WhatsApp Checkout</span>
+                <span class="tech-badge">Dynamic Pricing</span>
+              </div>
             </div>
             <div class="project-footer">
               <a href="https://photoframepfs.pages.dev/" target="_blank" rel="noopener noreferrer">Open Preview Tool ↗</a>
@@ -227,6 +191,12 @@
               <div class="project-metrics">
                 <span class="metric-pill">✦ 12-week progression</span>
                 <span class="metric-pill">✦ Photo milestone vault</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-badge accent">Digital Health App</span>
+                <span class="tech-badge">PWA Engine</span>
+                <span class="tech-badge">Client Encryption</span>
+                <span class="tech-badge">Automated Alerts</span>
               </div>
             </div>
             <div class="project-footer">
@@ -284,6 +254,101 @@
       </div>
     </section>
 
+    <!-- ── 4-STAGE DELIVERY FRAMEWORK ── -->
+    <section class="pipeline-section reveal" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Predictable Engineering</span>
+          <h2>The 4-Stage Delivery Pipeline</h2>
+          <p class="section-intro">
+            No endless revision loops or vague milestones. Every studio engagement follows a structured, transparent timeline from Day 1 to Launch.
+          </p>
+        </div>
+
+        <div class="pipeline-grid">
+          <div class="pipeline-card">
+            <span class="pipeline-step-badge">Stage 01 · Week 1</span>
+            <h3>Strategic Architecture &amp; Scope</h3>
+            <p>We lock down exact business requirements, user journeys, tech stack, and deliverable milestones upfront. Fixed pricing with zero surprise overages.</p>
+            <div class="pipeline-deliverable">Output: Technical Specification &amp; Information Architecture</div>
+          </div>
+
+          <div class="pipeline-card">
+            <span class="pipeline-step-badge">Stage 02 · Week 2</span>
+            <h3>Interactive Prototype &amp; Design</h3>
+            <p>Clickable high-fidelity wireframes and bespoke typographic layouts. You review the real visual hierarchy and checkout flow before code is written.</p>
+            <div class="pipeline-deliverable">Output: Approved Interactive Figma / Live Prototype</div>
+          </div>
+
+          <div class="pipeline-card">
+            <span class="pipeline-step-badge">Stage 03 · Weeks 3–4</span>
+            <h3>Full-Stack Engineering &amp; Integrations</h3>
+            <p>Clean Jamstack/React builds, sub-second edge optimization, payment gateway hookups (UPI/Razorpay/Stripe), and WhatsApp/Shiprocket automations.</p>
+            <div class="pipeline-deliverable">Output: Production Staging Sandbox with Live Data</div>
+          </div>
+
+          <div class="pipeline-card">
+            <span class="pipeline-step-badge">Stage 04 · Launch</span>
+            <h3>Production Launch &amp; Handover</h3>
+            <p>Live DNS cutover, SSL verification, complete Git repository transfer, video walkthrough documentation, and 100% client code ownership.</p>
+            <div class="pipeline-deliverable">Output: Live Verified Flagship &amp; Zero Lock-in</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── THE STUDIO STANDARD COMPARISON ── -->
+    <section class="comparison-section reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Operational Transparency</span>
+          <h2>Traditional Agency vs. The SaVi Standard</h2>
+          <p class="section-intro">
+            Why growing brands choose a focused digital atelier over multi-tier corporate agencies.
+          </p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Operational Dimension</th>
+                <th>Traditional Agency Model</th>
+                <th class="savi-col">The SaVi Studio Standard</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Team Structure</strong></td>
+                <td>Pitched by senior directors, then passed to junior interns</td>
+                <td class="savi-col">Multidisciplinary design &amp; systems engineering team</td>
+              </tr>
+              <tr>
+                <td><strong>Pricing Clarity</strong></td>
+                <td>Vague hourly retainers with surprise billable additions</td>
+                <td class="savi-col">Guaranteed fixed project scopes agreed upfront</td>
+              </tr>
+              <tr>
+                <td><strong>Velocity &amp; Communication</strong></td>
+                <td>4-week delays for minor tweaks through ticketing queues</td>
+                <td class="savi-col">Direct studio communication &amp; weekly sprint releases</td>
+              </tr>
+              <tr>
+                <td><strong>Engineering Craft</strong></td>
+                <td>Heavy, slow CMS templates (6s–10s load times)</td>
+                <td class="savi-col">Sub-second custom code built for mobile conversion</td>
+              </tr>
+              <tr>
+                <td><strong>Code Ownership</strong></td>
+                <td>Proprietary builder lock-ins or hostage hosting</td>
+                <td class="savi-col">100% client repository ownership &amp; clean documentation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
     <!-- ── STUDIO PHILOSOPHY ── -->
     <section class="section" style="border-top:1px solid var(--border); background:var(--bg-subtle);">
       <div class="wrap">
@@ -336,70 +401,5 @@
   </footer>
 
   <script src="site.js"></script>
-  <script>
-    // Real-time Interactive Studio Logo Switcher
-    function switchStudioLogo(option) {
-      const headerLogo = document.getElementById('header-brand-logo');
-      const cards = [
-        document.getElementById('card-choice-1'),
-        document.getElementById('card-choice-2'),
-        document.getElementById('card-choice-3')
-      ];
-
-      cards.forEach((c, idx) => {
-        if (c) {
-          c.classList.toggle('active-choice', idx + 1 === option);
-          const badge = c.querySelector('.logo-lab-badge');
-          if (badge) badge.textContent = (idx + 1 === option) ? `Option 0${option} · Active` : `Option 0${idx + 1}`;
-        }
-      });
-
-      if (!headerLogo) return;
-
-      if (option === 1) {
-        // Concept 1: 3 Pillars of Delivery
-        headerLogo.innerHTML = `
-          <svg viewBox="0 0 280 60" fill="none" style="height:38px; width:auto;" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5" fill="#111111">SaVi</text>
-            <circle cx="82" cy="18" r="4" fill="#E8590C"/>
-            <rect x="98" y="20" width="3.5" height="18" rx="1.5" fill="#E8590C"/>
-            <rect x="107" y="14" width="3.5" height="24" rx="1.5" fill="#111111"/>
-            <rect x="116" y="8" width="3.5" height="30" rx="1.5" fill="#111111"/>
-            <g transform="translate(132, 16)">
-              <text x="0" y="12" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="2" fill="#E8590C">DESIGN. DEVELOP. DELIVER.</text>
-              <text x="0" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#7E7E7E">Simple · Effective · Efficient</text>
-            </g>
-          </svg>
-        `;
-      } else if (option === 2) {
-        // Concept 2: Kinetic Impeller / Setting into Motion
-        headerLogo.innerHTML = `
-          <svg viewBox="0 0 280 60" fill="none" style="height:38px; width:auto;" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 6 16 C 6 8, 26 8, 26 18 C 26 28, 6 30, 6 40 C 6 48, 26 48, 26 40" stroke="#111111" stroke-width="5" stroke-linecap="round" fill="none"/>
-            <path d="M 36 12 L 50 48 L 64 12" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <path d="M 72 24 L 82 30 L 72 36" stroke="#E8590C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-            <line x1="96" y1="14" x2="96" y2="46" stroke="#E6E4DF" stroke-width="1.5"/>
-            <g transform="translate(108, 16)">
-              <text x="0" y="12" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="2" fill="#E8590C">DESIGN. DEVELOP. DELIVER.</text>
-              <text x="0" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#7E7E7E">Kinetic Forward Motion</text>
-            </g>
-          </svg>
-        `;
-      } else if (option === 3) {
-        // Concept 3: Unbroken Handover Loop
-        headerLogo.innerHTML = `
-          <svg viewBox="0 0 280 60" fill="none" style="height:38px; width:auto;" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="800" letter-spacing="-1.5" fill="#111111">SaVi</text>
-            <path d="M 82 36 C 96 36, 104 18, 118 18 C 130 18, 136 26, 136 34" stroke="#E8590C" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <circle cx="136" cy="34" r="3.5" fill="#111111"/>
-            <g transform="translate(150, 16)">
-              <text x="0" y="12" font-family="'IBM Plex Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="2" fill="#E8590C">DESIGN. DEVELOP. DELIVER.</text>
-              <text x="0" y="25" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="500" fill="#7E7E7E">Direct Founder Handover</text>
-            </g>
-          </svg>
-        `;
-      }
-    }
-  </script>
 </body>
 </html>

@@ -377,82 +377,248 @@ body {
 /* ════════════════════════════════════
    INTERACTIVE LOGO BENCHMARK SECTION
 ════════════════════════════════════ */
-.logo-lab-section {
-  padding: 72px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-subtle);
-}
-
-.logo-lab-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 36px;
-}
-
-.logo-lab-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px 24px;
-  display: flex;
-  flex-direction: column;
+/* ════════════════════════════════════
+   INTERACTIVE SAVI BRAND LOGO & HOVER PHYSICS
+════════════════════════════════════ */
+.brand {
+  display: inline-flex;
   align-items: center;
-  text-align: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--ink);
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+}
+
+.savi-interactive-brand {
+  height: 42px;
+  width: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* Base glyph styling */
+.glyph-s, .glyph-a, .glyph-v, .glyph-i-stem {
+  transition: stroke 0.25s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Amber continuous impeller wave */
+.glyph-impeller {
+  stroke-dasharray: 120;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.16, 1, 0.3, 1), stroke-width 0.25s ease;
+}
+
+/* Living Solar Tittle on 'i' */
+.glyph-i-tittle {
+  transform-origin: 184px 7px;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), fill 0.25s ease;
+}
+
+/* Hover Interactions */
+.brand:hover .glyph-i-tittle {
+  transform: scale(1.4);
+}
+
+.brand:hover .glyph-impeller {
+  stroke-dashoffset: 24;
+  stroke-width: 4px;
+}
+
+.brand:hover .glyph-v {
+  stroke: var(--accent);
+}
+
+.savi-subtext text {
+  transition: fill 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.brand:hover .savi-subtext text:first-child {
+  letter-spacing: 2.6px;
+}
+
+/* ════════════════════════════════════
+   BOUTIQUE TECH STACK TAGS (BASEMENT-STYLE)
+════════════════════════════════════ */
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+.tech-badge {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--ink-secondary);
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+
+.project-card:hover .tech-badge {
+  border-color: var(--border-dark);
+  color: var(--ink);
+}
+
+.tech-badge.accent {
+  background: rgba(232, 89, 12, 0.07);
+  border-color: rgba(232, 89, 12, 0.2);
+  color: var(--accent);
+}
+
+/* ════════════════════════════════════
+   4-STAGE DELIVERY PIPELINE (BEYONDRELAY-STYLE)
+════════════════════════════════════ */
+.pipeline-section {
+  padding: 88px 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 40px;
   position: relative;
 }
 
-.logo-lab-card:hover {
+.pipeline-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pipeline-card:hover {
   border-color: var(--ink);
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
 }
 
-.logo-lab-card.active-choice {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-border);
-}
-
-.logo-lab-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
+.pipeline-step-badge {
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 3px 8px;
-  border-radius: 4px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--ink-muted);
-}
-
-.logo-display-box {
-  height: 90px;
-  display: flex;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  gap: 6px;
 }
 
-.logo-concept-info strong {
-  display: block;
-  font-size: 1.05rem;
+.pipeline-card h3 {
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--ink);
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
 }
 
-.logo-concept-info p {
-  font-size: 0.85rem;
+.pipeline-card p {
+  font-size: 0.88rem;
   color: var(--ink-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.pipeline-deliverable {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 6px 10px;
+  background: var(--bg-subtle);
+  border-radius: 4px;
+  border-left: 2px solid var(--accent);
+  color: var(--ink);
+}
+
+/* ════════════════════════════════════
+   THE STUDIO STANDARD COMPARISON GRID
+════════════════════════════════════ */
+.comparison-section {
+  padding: 88px 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.comparison-table-wrapper {
+  margin-top: 36px;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th {
+  padding: 18px 24px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.comparison-table th.savi-col {
+  background: rgba(232, 89, 12, 0.04);
+  color: var(--accent);
+  border-left: 1px solid var(--border);
+}
+
+.comparison-table td {
+  padding: 16px 24px;
+  font-size: 0.88rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--ink-secondary);
+  vertical-align: middle;
+}
+
+.comparison-table td.savi-col {
+  background: rgba(232, 89, 12, 0.02);
+  color: var(--ink);
+  font-weight: 600;
+  border-left: 1px solid var(--border);
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 900px) {
+  .pipeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pipeline-grid {
+    grid-template-columns: 1fr;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 12px 14px;
+    font-size: 0.78rem;
+  }
 }
 
 /* ════════════════════════════════════
